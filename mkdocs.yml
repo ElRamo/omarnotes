@@ -5,7 +5,7 @@ nav:
   - Jenkins: Jenkins/Jenkins.md
   - Mkdocs: Mkdocs/Mkdocs.md
   - Git: Git/Git.md
-  - Git2: Git/git2.md
+  - AWS: AWS/AWS.md
 theme:
   name: material  # Thème moderne pour MkDocs
   palette:

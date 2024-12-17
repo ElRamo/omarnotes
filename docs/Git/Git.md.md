@@ -1,3 +1,4 @@
+# GIT
 ## Git stash
 
 **Description**
@@ -35,7 +36,7 @@ git stash clear
 
 Supprime toutes les sauvegardes de la pile.
 
-# Git log
+## Git log
 
 **Description**
 `git log` permet de visualiser l'historique des commits dans un dépôt.
@@ -132,7 +133,7 @@ git log -1 --grep="JIRA"
 
 Recherche les commits contenant un mot-clé dans leur message, ici "JIRA".
 
-# Git branch 
+## Git branch 
 
 Afficher les branches distantes
 
@@ -140,10 +141,9 @@ Afficher les branches distantes
 git branch -r
 ```
 
-# Affiche les branches distantes disponibles.
-	# Erreur SSL à cause du CA ROOT
+## Erreur SSL à cause du CA ROOT
 
-## Etapes pour Linux
+### Etapes pour Linux
 
 **Description**
 Si une erreur SSL se produit, il peut être nécessaire de mettre à jour le certificat racine (CA Root) pour résoudre le problème.
@@ -159,7 +159,7 @@ Lancer la commande :
 sudo update-ca-certificates
 ```
 
-## Étapes pour Windows
+### Étapes pour Windows
 
 1. Ouvrir le gestionnaire des certificats
 2. Appuyez sur Win + R et tapez :
@@ -174,15 +174,15 @@ sudo update-ca-certificates
 
 Une fois le certificat ajouté, redémarrez les applications ou services (GitLab Runner, Ansible, etc.).
 
-# Git config
+## Git config
 
-## Option git config
+### Option git config
 
 - `--system` - Table applicable à l'ensemble de la machine.
 - `--global` - Configuration pour l'utilisateur actuel.
 - `--local` (par défaut) - Configuration pour le dépôt courant.
 
-## Configuration de base
+### Configuration de base
 
 ```
 git config --global user.email johndoe@myemail.com
@@ -218,7 +218,7 @@ git config --global core.editor vim
 
 Le fichier de configuration est `~/.gitconfig`.
 
-## Afficher les configs
+### Afficher les configs
 
 ```
 git config --list
@@ -232,7 +232,7 @@ git config --list --global
 git config user.name
 ```
 
-# Contenu du dossier .git
+## Contenu du dossier .git
 
 - **hooks** : Contient tous les hooks personnalisés. Ce sont des scripts exécutés avant ou après certaines actions (commit, push, etc.).
 - **branches** : Ce dossier est obsolète.
@@ -244,7 +244,7 @@ git config user.name
 - **logs** : Contient les logs des actions effectuées sur le dépôt.
 - **description** : Description du dépôt.
 
-# Git checkout
+## Git checkout
 
 **Annuler changement sur un fichier non indexé (not yet added)**
 
@@ -252,7 +252,7 @@ git config user.name
 git checkout testfile-01
 ```
 
-# Git rm
+## Git rm
 
 **Annuler modification indexée (added**)
 
@@ -268,11 +268,11 @@ Supprime un fichier à la fois de Git et du disque, même s'il est modifié.
 git rm -f myfile
 ```
 
-# Git reset et revert
+## Git reset et revert
 
-## Reset
+### Reset
 
-### Soft
+#### Soft
 
 Revenir 1 commit en arrière sans supprimer les modifications au niveau du fichier.
 
@@ -280,7 +280,7 @@ Revenir 1 commit en arrière sans supprimer les modifications au niveau du fichi
 git reset --soft HEAD~1
 ```
 
-### Hard
+#### Hard
 
 Revenir 1 commit en arrière et supprimer les modifications au niveau du fichier.
 
@@ -288,7 +288,7 @@ Revenir 1 commit en arrière et supprimer les modifications au niveau du fichier
 git reset --hard HEAD~1
 ```
 
-## Revert
+### Revert
 
 Crée un nouveau commit qui annule un ancien commit. Cela permet de rester linéaire et de ne pas avoir un HEAD en retard par rapport au HEAD distant.
 
@@ -298,7 +298,7 @@ Crée un nouveau commit qui annule un ancien commit. Cela permet de rester liné
 git revert --no-edit HEAD~1
 ```
 
-# Git diff
+## Git diff
 
 ```
 git diff
@@ -316,7 +316,7 @@ git diff HEAD~1 testfile-01
 git diff --staged
 ```
 
-# Git show
+## Git show
 
 Affiche le résultat de `git log` + `git diff` d'un commit. Utiliser `git log -p` pour tous les commits.
 
@@ -328,66 +328,66 @@ git show
 git show HEAD~1
 ```
 
-# Git tag
+## Git tag
 
-## Supprimer un tag
+### Supprimer un tag
 
 ```
 git tag -d v1.0
 ```
 
-## Basculer sur un tag
+### Basculer sur un tag
 
 ```
 git checkout v1.0
 ```
 
-## Créer un tag sur le commit courant
+### Créer un tag sur le commit courant
 
 ```
 git tag -a v2.0 -m "version 2.0. A lot of new features"
 ```
 
-## Afficher contenu d'un commit par son tag
+### Afficher contenu d'un commit par son tag
 
 ```
 git show v1.0
 ```
 
-# Git fetch
+## Git fetch
 
 Télécharge les derniers commits distants sans les intégrer à la branche locale. Ces merges sont dans une branche différente (ex: `origin/main`, local c'est `main`).
 
-# Git rebase
+## Git rebase
 
 Réécrit les commits d'une branche dans un historique linéaire sur la branche master. Cela permet d'avoir un historique linéaire et des identifiants de commit différents.
 
 Pratique : faire un rebase et ensuite merger pour changer la pointe du master sur le dernier commit.
 
-# Git remote
+## Git remote
 
-## Ajouter un remote repo
+### Ajouter un remote repo
 
 ```
 git remote add origin $URI
 ```
 
-## Afficher les repos distants
+### Afficher les repos distants
 
 ```
 git remote -v
 ```
 
-# Git fork
+## Git fork
 
 Créer une copie d'un projet, modifier et créer ensuite une PR (pull request) pour demander au projet forké d'accepter et de merger les modifications. Utilisé surtout sur les projets sur lesquels on n'a pas les droits de pull.
 
-# Git merge
+## Git merge
 
-## Fast-forward merge
+### Fast-forward merge
 
 Le master n'a aucun nouveau commit comparé à la branche à merger.
 
-## No fast-forward merge
+### No fast-forward merge
 
 Le master a de nouveaux commits comparé à la branche à merger. Un commit de merge est créé.
