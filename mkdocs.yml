@@ -5,6 +5,7 @@ nav:
   - Jenkins: Jenkins/Jenkins.md
   - Mkdocs: Mkdocs/Mkdocs.md
   - Git: Git/Git.md
+  - Git2: Git/git2.md
 theme:
   name: material  # Thème moderne pour MkDocs
   palette:
@@ -20,3 +21,4 @@ theme:
       toggle:
         icon: material/weather-night
         name: Basculer en mode clair
+    - toc.integrate: true

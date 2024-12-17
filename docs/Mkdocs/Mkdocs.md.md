@@ -23,7 +23,7 @@ mon-site/
     └── index.md     # Page d'accueil
 
 ```
-#### 3/ **Ajouter tes notes Obsidian**
+#### **3. Ajouter tes notes Obsidian**
 
 - Copie tous tes fichiers **`.md`** dans le dossier `docs`.
 - Structure ton contenu dans des sous-dossiers si nécessaire.  
