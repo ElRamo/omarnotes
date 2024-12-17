@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Jenkins/Jenkins.md",
+                "file": "Jenkins/Jenkins.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Jenkins"
+              "title": "Jenkins.md"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Jenkins/Jenkins.md",
+                "file": "Jenkins/Jenkins.md.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Jenkins"
+              "title": "Backlinks for Jenkins.md"
             }
           },
           {
@@ -149,7 +149,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,13 +159,24 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "c4ddb556bc7b7285",
   "lastOpenFiles": [
+    "Git/Git.md",
+    "Git/Git.md.md",
+    "output.md",
+    "Jenkins/Jenkins.md.md",
+    "Untitled.md",
+    "Git",
+    "excel_to_md.py~",
+    "excel_to_md.py",
+    "index.md",
+    "Mkdocs/Mkdocs.md.md",
+    "Mkdocs",
     "Docker/Docker.md",
-    "Jenkins/Jenkins.md",
     "Docker",
     "mkdocs.yml",
     "docs/index.md",
@@ -174,9 +186,7 @@
     "mon-site/docs",
     "mon-site",
     "Template/TOC.md",
-    "Template",
     "TOC.md",
-    "Jenkins",
     "Welcome.md"
   ]
 }
