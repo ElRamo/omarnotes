@@ -1,0 +1,24 @@
+site_name: Omar's Notes
+nav:
+  - Accueil: index.md
+  - Docker: Docker/Docker.md
+  - Jenkins: Jenkins/Jenkins.md
+  - Mkdocs: Mkdocs/Mkdocs.md
+  - Git: Git/Git.md
+  - AWS: AWS/AWS.md
+theme:
+  name: material  # Thème moderne pour MkDocs
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode sombre
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode clair
+    - toc.integrate: true
