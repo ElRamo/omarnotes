@@ -1,11 +1,12 @@
 site_name: Omar's Notes
 nav:
-  - Accueil: index.md
   - Docker: Docker/Docker.md
   - Jenkins: Jenkins/Jenkins.md
   - Mkdocs: Mkdocs/Mkdocs.md
   - Git: Git/Git.md
-  - AWS: AWS/AWS  .md
+  - AWS: AWS/AWS.md
+  - K8S: K8S/K8S.md
+  - WSL: WSL/WSL.md
 theme:
   name: material  # Thème moderne pour MkDocs
   palette:

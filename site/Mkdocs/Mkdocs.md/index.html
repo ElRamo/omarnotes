@@ -16,7 +16,7 @@
     
     
       
-        <title>Jenkins - Omar's Notes</title>
+        <title>Mkdocs - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jenkins" class="md-skip">
+        <a href="#mkdocs" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jenkins
+              Mkdocs
             
           </span>
         </div>
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../Jenkins/Jenkins.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -289,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,18 +369,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#1-installation-des-outils-necessaires" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      1. Installation des outils nécessaires
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference-cours" class="md-nav__link">
+  <a href="#2-creer-un-projet-mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
-      Référence cours
+      2. Créer un projet MkDocs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ajouter-tes-notes-obsidian" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ajouter tes notes Obsidian
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configurer-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Configurer mkdocs.yml
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tester-localement-le-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tester localement le site
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-initialiser-le-depot-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Initialiser le dépôt GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7publier-sur-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.Publier sur GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-activer-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Activer GitHub Pages
     </span>
   </a>
   
@@ -401,10 +455,91 @@
                   
 
 
-<h1 id="jenkins">Jenkins</h1>
-<h2 id="notes">Notes</h2>
-<h2 id="reference-cours">Référence cours</h2>
-<p><a href="https://www.coursera.org/learn/jenkins-for-beginners">Coursera : Jenkins for Beginners</a></p>
+<h1 id="mkdocs">Mkdocs</h1>
+<h4 id="1-installation-des-outils-necessaires"><strong>1. Installation des outils nécessaires</strong></h4>
+<p>Assure-toi d'avoir <strong>Python</strong> et <strong>MkDocs</strong> installés :</p>
+<pre><code># Installer MkDocs
+pip install mkdocs
+
+# (Optionnel) Installer le thème Material pour MkDocs
+pip install mkdocs-material
+</code></pre>
+<h4 id="2-creer-un-projet-mkdocs"><strong>2. Créer un projet MkDocs</strong></h4>
+<p>Dans le terminal, exécute :</p>
+<pre><code>mkdocs new mon-site
+</code></pre>
+<p>Cela crée la structure suivante :</p>
+<pre><code>mon-site/
+│── mkdocs.yml       # Fichier de configuration
+│── docs/            # Contient les fichiers Markdown
+    └── index.md     # Page d'accueil
+
+</code></pre>
+<h4 id="3-ajouter-tes-notes-obsidian"><strong>3. Ajouter tes notes Obsidian</strong></h4>
+<ul>
+<li>Copie tous tes fichiers <strong><code>.md</code></strong> dans le dossier <code>docs</code>.</li>
+<li>Structure ton contenu dans des sous-dossiers si nécessaire.  </li>
+</ul>
+<pre><code>docs/
+│── index.md
+│── Docker/
+│   └── Docker.md
+│── Jenkins/
+    └── Jenkins.md
+
+</code></pre>
+<h4 id="4-configurer-mkdocsyml"><strong>4. Configurer <code>mkdocs.yml</code></strong></h4>
+<p>Ouvre <strong><code>mkdocs.yml</code></strong> et configure la navigation et le thème :</p>
+<pre><code>site_name: Mes Notes
+nav:
+  - Accueil: index.md
+  - Docker: Docker/Docker.md
+  - Jenkins: Jenkins/Jenkins.md
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode sombre
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode clair
+</code></pre>
+<h4 id="5-tester-localement-le-site"><strong>5. Tester localement le site</strong></h4>
+<p>Lance la commande suivante pour voir ton site en local :</p>
+<pre><code>mkdocs serve
+</code></pre>
+<p>Accède à <code>http://127.0.0.1:8000</code> dans ton navigateur.</p>
+<h4 id="6-initialiser-le-depot-github"><strong>6. Initialiser le dépôt GitHub</strong></h4>
+<p>Si ton projet n'est pas encore lié à un dépôt GitHub, initialise-le :</p>
+<pre><code>git init
+git add .
+git commit -m &quot;Initialisation du projet MkDocs&quot;
+git remote add origin https://github.com/ton-utilisateur/ton-depot.git
+git push -u origin master
+</code></pre>
+<h4 id="7publier-sur-github-pages">7.<strong>Publier sur GitHub Pages</strong></h4>
+<p>Utilise la commande suivante pour déployer ton site :
+<code>mkdocs gh-deploy</code>
+Cela :</p>
+<ol>
+<li>Génère le site statique.</li>
+<li>Publie le site sur la branche <strong><code>gh-pages</code></strong> de ton dépôt GitHub.</li>
+</ol>
+<h4 id="8-activer-github-pages"><strong>8. Activer GitHub Pages</strong></h4>
+<ol>
+<li>Va dans ton dépôt GitHub → <strong>Settings</strong> → <strong>Pages</strong>.</li>
+<li>Choisis la branche <strong><code>gh-pages</code></strong> comme source.</li>
+<li>Ton site sera accessible à :</li>
+</ol>
+<pre><code>https://ton-utilisateur.github.io/ton-depot/
+</code></pre>
 
 
 
