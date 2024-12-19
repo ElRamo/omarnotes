@@ -51,3 +51,13 @@ vim /etc/wsl.conf
 hostname = MyCustomHostname
 generateHosts = false
 ```
+## Lancement de session après démarrage Windows  
+Ouvrir un cmd et taper  
+```
+notepad %USERPROFILE%\.wslconfig
+```
+Ajouter le paramètre ci-dessous au fichier et enregistrer
+```
+[boot]
+command="wsl -d MaSession"
+```

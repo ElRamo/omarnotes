@@ -377,6 +377,11 @@ git remote add origin $URI
 ```
 git remote -v
 ```
+### Configurer remote repo avec Token  
+```
+git remote set-url origin https://YOUR_USERNAME:YOUR_TOKEN@github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```   
+
 
 ## Git fork
 
