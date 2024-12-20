@@ -16,7 +16,7 @@
     
     
       
-        <title>Docker - Omar's Notes</title>
+        <title>WSL - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#wsl" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker
+              WSL
             
           </span>
         </div>
@@ -229,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../Docker/Docker.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -349,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../WSL/WSL.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -389,105 +389,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compatibilite-kernel" class="md-nav__link">
+  <a href="#initialisation" class="md-nav__link">
     <span class="md-ellipsis">
-      Compatibilité Kernel
+      Initialisation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#arreterlancer-session" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#convenience-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      Convenience script
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-exit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Exit
+      Arrêter/lancer session
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#commandes-de-bases" class="md-nav__link">
+  <a href="#backup-dune-session" class="md-nav__link">
     <span class="md-ellipsis">
-      Commandes de bases
+      backup d'une session
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-hub" class="md-nav__link">
+  <a href="#restaurer-la-session" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Hub
+      Restaurer la session
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acces-application-conteneurisee" class="md-nav__link">
+  <a href="#erreur-ssl" class="md-nav__link">
     <span class="md-ellipsis">
-      Accès application conteneurisée
+      Erreur SSL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creer-image" class="md-nav__link">
+  <a href="#afficher-les-distributions-lancees" class="md-nav__link">
     <span class="md-ellipsis">
-      Créer image
+      Afficher les distributions lancées
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#creer-une-nouvelle-session" class="md-nav__link">
     <span class="md-ellipsis">
-      Références
+      Créer une nouvelle session
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emplacement-de-stockage-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emplacement de stockage session
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changer-hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      changer hostname
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lancement-de-session-apres-demarrage-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lancement de session après démarrage Windows
     </span>
   </a>
   
@@ -508,99 +493,58 @@
                   
 
 
-<h1 id="docker">Docker</h1>
-<h2 id="compatibilite-kernel">Compatibilité Kernel</h2>
-<ul>
-<li>Les conteneurs Docker partagent le <strong>kernel du système hôte</strong> (gère les ressources matérielles).  </li>
-<li>Par conséquent, Docker Linux ne peut tourner que sur un système hôte avec un <strong>kernel Linux</strong> compatible.  </li>
-</ul>
-<h2 id="installation">Installation</h2>
-<h3 id="convenience-script">Convenience script</h3>
-<p>Il est préférable d'utiliser le <a href="https://get.docker.com/?_gl=1*1wpfmkm*_ga*MTgzODY3NDQ4My4xNzM0NjE4ODQx*_ga_XJWPQMJYHQ*MTczNDYxODg0MC4xLjEuMTczNDYxODg0NS41NS4wLjA.">convenience script</a> pour une utilisation de docker <strong>hors production</strong>.  </p>
-<h3 id="windows">Windows</h3>
-<p><a href="https://www.docker.com/products/docker-desktop/">Télécharger</a></p>
-<h3 id="documentation">Documentation</h3>
-<p>https://docs.docker.com/engine/install/  </p>
-<h2 id="docker-exit">Docker Exit</h2>
-<p>Si le service qui tourne dans le container s'arrête le container est arrêté (exit)</p>
-<h2 id="commandes-de-bases">Commandes de bases</h2>
-<ul>
-<li><strong><code>docker run [image]</code></strong> : Lance un conteneur à partir d'une image.  </li>
-<li>-<strong><code>docker run [image] [cmd]</code></strong> : Lance un conteneur à partir d'une image et taper la cmd.  </li>
-<li><strong><code>docker run -d [image]</code></strong> : Lance un conteneur à partir d'une image et mode détaché  </li>
-<li><strong><code>docker run -it [image]</code></strong> : Interactive terminal, permet d'afficher les promet et taper un argument si l'application le demande. </li>
-<li><strong><code>docker run -p HostPort:ContainerPort [image]</code></strong> : port mapping</li>
-<li><strong><code>docker run -v HostVolume:ContainerVolume [image]</code></strong> : port mapping</li>
-<li><strong><code>docker inspect [container]</code></strong> : Détail d'un container</li>
-<li><strong><code>docker attach [container]</code></strong> : Se connecte au terminal d'un conteneur en cours d'exécution.</li>
-<li><strong><code>docker ps</code></strong> : Affiche les conteneurs en cours d'exécution.  </li>
-<li><strong><code>docker ps -a</code></strong> : Affiche tous les conteneurs, y compris ceux qui sont arrêtés.  </li>
-<li><strong><code>docker stop [container]</code></strong> : Arrête un conteneur en cours d'exécution.  </li>
-<li><strong><code>docker start [container]</code></strong> : Démarre un conteneur arrêté.  </li>
-<li><strong><code>docker restart [container]</code></strong> : Redémarre un conteneur.  </li>
-<li><strong><code>docker rm [container]</code></strong> : Supprime un conteneur arrêté.  </li>
-<li><strong><code>docker rmi [image]</code></strong> : Supprime une image Docker.  </li>
-<li><strong><code>docker build -t [image_name] [path]</code></strong> : Crée une image Docker à partir d'un Dockerfile.  </li>
-<li><strong><code>docker images</code></strong> : Liste les images disponibles localement.  </li>
-<li><strong><code>docker pull [image]</code></strong> : Télécharge une image depuis Docker Hub.  </li>
-<li><strong><code>docker push [image]</code></strong> : Envoie une image vers un registre Docker.  </li>
-<li><strong><code>docker exec -it [container] [command]</code></strong> : Exécute une commande dans un conteneur en cours d'exécution.  </li>
-<li><strong><code>docker logs [container]</code></strong> : Affiche les logs d'un conteneur.  </li>
-<li><strong><code>docker volume ls</code></strong> : Liste les volumes Docker.  </li>
-<li><strong><code>docker network ls</code></strong> : Liste les réseaux Docker.  </li>
-<li><strong><code>docker prune</code></strong> : Supprime les ressources inutilisées (conteneurs, images, volumes, réseaux)  </li>
-</ul>
-<h2 id="docker-hub">Docker Hub</h2>
-<p><a href="https://hub.docker.com/">Listes des images</a>  </p>
-<h2 id="acces-application-conteneurisee">Accès application conteneurisée</h2>
-<p><strong>1/ Depuis le host</strong><br />
-Utiliser l'adresse IP du container <code>docker inspect [container]</code> </p>
-<p><strong>2/ Depuis l'extérieur</strong><br />
-Faire du <a href="#commandes-de-bases">port mapping</a> <code>docker run -p</code>  </p>
-<h2 id="creer-image">Créer image</h2>
-<p><strong>1/ Créer un dockerfile</strong>  </p>
-<details>  
-<summary>Dockerfile example</summary>  
-
-<pre><code># Utiliser une image Python comme base  
-FROM python:3.9-slim  
-
-# Définir le répertoire de travail  
-WORKDIR /app  
-
-# Copier les fichiers de l'application dans le conteneur  
-COPY requirements.txt ./  
-COPY app.py ./  
-
-# Installer les dépendances  
-RUN pip install --no-cache-dir -r requirements.txt  
-
-# Exposer le port utilisé par Flask  
-EXPOSE 5000  
-
-# Définir la commande pour lancer l'application Flask  
-CMD [&quot;python&quot;, &quot;app.py&quot;]  
+<h1 id="wsl">WSL</h1>
+<h2 id="initialisation">Initialisation</h2>
+<pre><code>wsl --install  
+wsl --set-default-version 2  
+reboot pc  
+Microsoft store &gt; installer ubuntu  
+wsl  
+sudo apt update 
 </code></pre>
-
-</details>
-<p><strong>2/ builder l'image</strong>  </p>
-<pre><code>docker build -t flask-app .  
+<h2 id="arreterlancer-session">Arrêter/lancer session</h2>
+<pre><code>wsl --terminate &lt;NomDeLaDistribution&gt;  
+wsl --list  
+wsl -d Ubuntu-22.04  
 </code></pre>
-<blockquote>
-<p>Le deuxième build est plus rapide car les étapes de build (exemple : télécharge image ubuntu) ne sont pas rejouer  </p>
-</blockquote>
-<p><strong>3/ Upload image</strong><br />
-A - Créer l'image avec le tag du repo (exemple omar) et pousser  </p>
-<pre><code>docker build -t omar/flask-app .  
+<h2 id="backup-dune-session">backup d'une session</h2>
+<p><code>wsl --export Ubuntu-22.04 mybackup.tar</code>  </p>
+<h2 id="restaurer-la-session">Restaurer la session</h2>
+<p><code>wsl --import &lt;DistributionNewName&gt; &lt;InstallLocation&gt; &lt;PathToBackupTar&gt;</code>  </p>
+<h2 id="erreur-ssl">Erreur SSL</h2>
+<ol>
+<li>Télécharger le CA ROOT  </li>
+<li>copier le fichier ici dans <code>/usr/local/share/ca-certificates/ca.crt</code>  </li>
+<li>Lancer la cmd : <code>sudo update-ca-certificates</code> </li>
+</ol>
+<h2 id="afficher-les-distributions-lancees">Afficher les distributions lancées</h2>
+<p><code>wsl --list --running</code></p>
+<h2 id="creer-une-nouvelle-session">Créer une nouvelle session</h2>
+<ol>
+<li>Créer une backup d'une session existante  </li>
+<li>Restaurer la distribution avec un nouveau nom de distribution  </li>
+<li>Lancer la nouvelle distribution (voir les commandes ci-dessus)   </li>
+</ol>
+<h2 id="emplacement-de-stockage-session">Emplacement de stockage session</h2>
+<p>connaître le dossier où est stockée l'image Ubuntu-22.04  </p>
+<pre><code>&quot;Get-ChildItem &quot;&quot;HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss&quot;&quot; | ForEach-Object {
+    Get-ItemProperty $_.PSPath
+} | Where-Object { $_.DistributionName -eq &quot;&quot;Ubuntu-22.04&quot;&quot; } | Select-Object BasePath&quot;
 </code></pre>
-<p>B - Se connecter au repo</p>
-<pre><code>docker login
+<h2 id="changer-hostname">changer hostname</h2>
+<pre><code>vim /etc/wsl.conf
+[network]  
+hostname = MyCustomHostname
+generateHosts = false
 </code></pre>
-<p>C - Pousser l'image</p>
-<pre><code>docker push omar/flask-app .
+<h2 id="lancement-de-session-apres-demarrage-windows">Lancement de session après démarrage Windows</h2>
+<p>Ouvrir un cmd et taper  </p>
+<pre><code>notepad %USERPROFILE%\.wslconfig
 </code></pre>
-<h2 id="references">Références</h2>
-<p><a href="https://www.coursera.org/learn/docker-basics-for-devops">Coursera - Docker Basics for DevOps</a>  </p>
+<p>Ajouter le paramètre ci-dessous au fichier et enregistrer</p>
+<pre><code>[boot]
+command=&quot;wsl -d MaSession&quot;
+</code></pre>
 
 
 
