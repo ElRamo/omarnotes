@@ -16,11 +16,14 @@
     
     
       
-        <title>Docker.md - Mes Notes</title>
+        <title>Docker - Omar's Notes</title>
       
     
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -49,13 +52,25 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -69,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Mes Notes" class="md-header__button md-logo" aria-label="Mes Notes" data-md-component="logo">
+    <a href="../.." title="Omar&#39;s Notes" class="md-header__button md-logo" aria-label="Omar's Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -83,18 +98,50 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Mes Notes
+            Omar's Notes
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker.md
+              Docker
             
           </span>
         </div>
       </div>
     </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+    
+  
+</form>
+      
     
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
@@ -164,36 +211,16 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Mes Notes" class="md-nav__button md-logo" aria-label="Mes Notes" data-md-component="logo">
+    <a href="../.." title="Omar&#39;s Notes" class="md-nav__button md-logo" aria-label="Omar's Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Mes Notes
+    Omar's Notes
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Accueil
-  </span>
-  
-
-      </a>
-    </li>
-  
-
     
       
       
@@ -206,7 +233,7 @@
         
   
   <span class="md-ellipsis">
-    Dossier 1
+    Docker
   </span>
   
 
@@ -226,7 +253,107 @@
         
   
   <span class="md-ellipsis">
-    Dossier 2
+    Jenkins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AWS/AWS.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../K8S/K8S.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WSL/WSL.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSL
   </span>
   
 
@@ -252,6 +379,121 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compatibilite-kernel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilité Kernel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convenience-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convenience script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Exit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-de-bases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commandes de bases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Hub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acces-application-conteneurisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accès application conteneurisée
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Références
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -266,9 +508,99 @@
                   
 
 
-  <h1>Docker.md</h1>
+<h1 id="docker">Docker</h1>
+<h2 id="compatibilite-kernel">Compatibilité Kernel</h2>
+<ul>
+<li>Les conteneurs Docker partagent le <strong>kernel du système hôte</strong> (gère les ressources matérielles).  </li>
+<li>Par conséquent, Docker Linux ne peut tourner que sur un système hôte avec un <strong>kernel Linux</strong> compatible.  </li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="convenience-script">Convenience script</h3>
+<p>Il est préférable d'utiliser le <a href="https://get.docker.com/?_gl=1*1wpfmkm*_ga*MTgzODY3NDQ4My4xNzM0NjE4ODQx*_ga_XJWPQMJYHQ*MTczNDYxODg0MC4xLjEuMTczNDYxODg0NS41NS4wLjA.">convenience script</a> pour une utilisation de docker <strong>hors production</strong>.  </p>
+<h3 id="windows">Windows</h3>
+<p><a href="https://www.docker.com/products/docker-desktop/">Télécharger</a></p>
+<h3 id="documentation">Documentation</h3>
+<p>https://docs.docker.com/engine/install/  </p>
+<h2 id="docker-exit">Docker Exit</h2>
+<p>Si le service qui tourne dans le container s'arrête le container est arrêté (exit)</p>
+<h2 id="commandes-de-bases">Commandes de bases</h2>
+<ul>
+<li><strong><code>docker run [image]</code></strong> : Lance un conteneur à partir d'une image.  </li>
+<li>-<strong><code>docker run [image] [cmd]</code></strong> : Lance un conteneur à partir d'une image et taper la cmd.  </li>
+<li><strong><code>docker run -d [image]</code></strong> : Lance un conteneur à partir d'une image et mode détaché  </li>
+<li><strong><code>docker run -it [image]</code></strong> : Interactive terminal, permet d'afficher les promet et taper un argument si l'application le demande. </li>
+<li><strong><code>docker run -p HostPort:ContainerPort [image]</code></strong> : port mapping</li>
+<li><strong><code>docker run -v HostVolume:ContainerVolume [image]</code></strong> : port mapping</li>
+<li><strong><code>docker inspect [container]</code></strong> : Détail d'un container</li>
+<li><strong><code>docker attach [container]</code></strong> : Se connecte au terminal d'un conteneur en cours d'exécution.</li>
+<li><strong><code>docker ps</code></strong> : Affiche les conteneurs en cours d'exécution.  </li>
+<li><strong><code>docker ps -a</code></strong> : Affiche tous les conteneurs, y compris ceux qui sont arrêtés.  </li>
+<li><strong><code>docker stop [container]</code></strong> : Arrête un conteneur en cours d'exécution.  </li>
+<li><strong><code>docker start [container]</code></strong> : Démarre un conteneur arrêté.  </li>
+<li><strong><code>docker restart [container]</code></strong> : Redémarre un conteneur.  </li>
+<li><strong><code>docker rm [container]</code></strong> : Supprime un conteneur arrêté.  </li>
+<li><strong><code>docker rmi [image]</code></strong> : Supprime une image Docker.  </li>
+<li><strong><code>docker build -t [image_name] [path]</code></strong> : Crée une image Docker à partir d'un Dockerfile.  </li>
+<li><strong><code>docker images</code></strong> : Liste les images disponibles localement.  </li>
+<li><strong><code>docker pull [image]</code></strong> : Télécharge une image depuis Docker Hub.  </li>
+<li><strong><code>docker push [image]</code></strong> : Envoie une image vers un registre Docker.  </li>
+<li><strong><code>docker exec -it [container] [command]</code></strong> : Exécute une commande dans un conteneur en cours d'exécution.  </li>
+<li><strong><code>docker logs [container]</code></strong> : Affiche les logs d'un conteneur.  </li>
+<li><strong><code>docker volume ls</code></strong> : Liste les volumes Docker.  </li>
+<li><strong><code>docker network ls</code></strong> : Liste les réseaux Docker.  </li>
+<li><strong><code>docker prune</code></strong> : Supprime les ressources inutilisées (conteneurs, images, volumes, réseaux)  </li>
+</ul>
+<h2 id="docker-hub">Docker Hub</h2>
+<p><a href="https://hub.docker.com/">Listes des images</a>  </p>
+<h2 id="acces-application-conteneurisee">Accès application conteneurisée</h2>
+<p><strong>1/ Depuis le host</strong><br />
+Utiliser l'adresse IP du container <code>docker inspect [container]</code> </p>
+<p><strong>2/ Depuis l'extérieur</strong><br />
+Faire du <a href="#commandes-de-bases">port mapping</a> <code>docker run -p</code>  </p>
+<h2 id="creer-image">Créer image</h2>
+<p><strong>1/ Créer un dockerfile</strong>  </p>
+<details>  
+<summary>Dockerfile example</summary>  
 
+<pre><code># Utiliser une image Python comme base  
+FROM python:3.9-slim  
 
+# Définir le répertoire de travail  
+WORKDIR /app  
+
+# Copier les fichiers de l'application dans le conteneur  
+COPY requirements.txt ./  
+COPY app.py ./  
+
+# Installer les dépendances  
+RUN pip install --no-cache-dir -r requirements.txt  
+
+# Exposer le port utilisé par Flask  
+EXPOSE 5000  
+
+# Définir la commande pour lancer l'application Flask  
+CMD [&quot;python&quot;, &quot;app.py&quot;]  
+</code></pre>
+
+</details>
+<p><strong>2/ builder l'image</strong>  </p>
+<pre><code>docker build -t flask-app .  
+</code></pre>
+<blockquote>
+<p>Le deuxième build est plus rapide car les étapes de build (exemple : télécharge image ubuntu) ne sont pas rejouer  </p>
+</blockquote>
+<p><strong>3/ Upload image</strong><br />
+A - Créer l'image avec le tag du repo (exemple omar) et pousser  </p>
+<pre><code>docker build -t omar/flask-app .  
+</code></pre>
+<p>B - Se connecter au repo</p>
+<pre><code>docker login
+</code></pre>
+<p>C - Pousser l'image</p>
+<pre><code>docker push omar/flask-app .
+</code></pre>
+<h2 id="references">Références</h2>
+<p><a href="https://www.coursera.org/learn/docker-basics-for-devops">Coursera - Docker Basics for DevOps</a>  </p>
 
 
 
