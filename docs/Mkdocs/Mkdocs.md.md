@@ -94,4 +94,13 @@ Cela :
 3. Ton site sera accessible à :
 ```
 https://ton-utilisateur.github.io/ton-depot/
-```
+```  
+#### Utiliser un bloc déroulant  
+Remplacer les `A et B` par `< et >`  
+
+> AdetailB  
+AsummaryB Cliquer pour dérouler AsummaryB  
+trois altgr+4    
+MON TEXTE  
+trois altgr+4  
+> A/detailB  
