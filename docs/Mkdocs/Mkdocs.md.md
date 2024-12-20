@@ -104,3 +104,8 @@ trois altgr+4
 MON TEXTE  
 trois altgr+4  
 > A/detailB  
+
+#### Lien hypertexte  
+**Syntaxe**: \[lien\](url)  
+**Lien interne:** \[lien vers header\](#mon-header)  
+

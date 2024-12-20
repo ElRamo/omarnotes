@@ -118,7 +118,7 @@ pipeline {
 #### Polling vs Webhook  
 **Polling** configure une cron pour vérifier les changements au niveau du projet Github. Aucune configuration n'est nécessaire au niveau de Github.  
 **Webhook** : Permet de déclencher le pipeline en réponse à un changement du code Github (commit etc)  
-> Il est obligatoire de renseigner le [script from SCM](#jenkinsfile-sur-Github) pour utiliser webhook et/ou Polling
+> Il est obligatoire de renseigner le [script from SCM](#jenkinsfile-sur-github) pour utiliser webhook et/ou Polling
 #### Polling configuration  
 1. Créer un nouvel item **pipeline**  
 2. Dans général sélectionner **GitHub project** et renseigner le lien du projet  
@@ -205,8 +205,35 @@ pipeline{
 6. Pour le Goal `Test` définir `Build Triggers > Build after other projects are built` et définir le projet de compile  
 ### Pipeline  
 Définir le `script` du pipeline directement ou spécifier un `GitHub Project` contenant un fichier `Jenkinsfile` (voir la rubrique pipeline plus haut)
+
+## Ajouter un nœud  
+Aller dans `Manage Jenkins > Nodes > New Node`
+
+## A venir
+- **Gestion des utilisateurs** :  
+    - Créer et gérer des utilisateurs avec des rôles spécifiques.  
+    - Configurer des stratégies d'autorisation (par exemple, **Matrix Authorization Strategy** ou **Role-based Authorization Strategy**).  
+- **Permissions de base** :  
+    - **Lire** : Accès en lecture aux jobs.  
+    - **Exécuter** : Permet de lancer un job.  
+    - **Configurer** : Accès pour modifier un job.  
+    - **Administrer** : Accès complet pour gérer Jenkins (configuration globale, gestion des utilisateurs).  
+- **RBAC (Role-Based Access Control)** :  
+    - Définir des rôles (Admin, Developer, Read-Only) pour limiter les actions des utilisateurs.  
+    - Restreindre l'accès à certains jobs ou environnements.  
+- **Sécurisation de Jenkins** :  
+    - Utiliser **SSL** pour sécuriser les connexions.  
+    - Intégrer avec des outils externes (LDAP, Active Directory) pour l'authentification. 
+    - Utiliser des plugins comme **Build Authorization Plugin** pour contrôler l'accès aux builds.  
+- **Gestion des permissions par job** :   
+    - Configurer les droits d'accès spécifiques sur chaque job (lecture, exécution, configuration).  
+    - Utiliser des plugins pour restreindre l'accès à des jobs sensibles ou critiques.  
+- **Audits et logs** :  
+    - Activer la journalisation des actions des utilisateurs pour un audit complet.  
+    - Surveiller les accès et l'activité des utilisateurs pour prévenir les abus.   
+
 ## Référence cours
 [Coursera : Jenkins for Beginners](https://www.coursera.org/learn/jenkins-for-beginners)  
-https://www.coursera.org/learn/cicd-using-jenkins
+[Coursera : CICD Using Jenkins](https://www.coursera.org/learn/cicd-using-jenkins)
 
 
