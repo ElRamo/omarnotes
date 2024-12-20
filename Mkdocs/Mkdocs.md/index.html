@@ -16,7 +16,7 @@
     
     
       
-        <title>Docker - Omar's Notes</title>
+        <title>Mkdocs - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#mkdocs" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker
+              Mkdocs
             
           </span>
         </div>
@@ -229,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../Docker/Docker.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -389,105 +389,99 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compatibilite-kernel" class="md-nav__link">
+  <a href="#1-installation-des-outils-necessaires" class="md-nav__link">
     <span class="md-ellipsis">
-      Compatibilité Kernel
+      1. Installation des outils nécessaires
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#2-creer-un-projet-mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#convenience-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      Convenience script
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-exit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Exit
+      2. Créer un projet MkDocs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#commandes-de-bases" class="md-nav__link">
+  <a href="#3-ajouter-tes-notes-obsidian" class="md-nav__link">
     <span class="md-ellipsis">
-      Commandes de bases
+      3. Ajouter tes notes Obsidian
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-hub" class="md-nav__link">
+  <a href="#4-configurer-mkdocsyml" class="md-nav__link">
     <span class="md-ellipsis">
-      Docker Hub
+      4. Configurer mkdocs.yml
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acces-application-conteneurisee" class="md-nav__link">
+  <a href="#5-tester-localement-le-site" class="md-nav__link">
     <span class="md-ellipsis">
-      Accès application conteneurisée
+      5. Tester localement le site
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#creer-image" class="md-nav__link">
+  <a href="#6-initialiser-le-depot-github" class="md-nav__link">
     <span class="md-ellipsis">
-      Créer image
+      6. Initialiser le dépôt GitHub
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#7publier-sur-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
-      Références
+      7.Publier sur GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-activer-github-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Activer GitHub Pages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-mise-a-jour-du-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Mise à jour du site
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-un-bloc-deroulant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utiliser un bloc déroulant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lien-hypertexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lien hypertexte
     </span>
   </a>
   
@@ -508,99 +502,110 @@
                   
 
 
-<h1 id="docker">Docker</h1>
-<h2 id="compatibilite-kernel">Compatibilité Kernel</h2>
-<ul>
-<li>Les conteneurs Docker partagent le <strong>kernel du système hôte</strong> (gère les ressources matérielles).  </li>
-<li>Par conséquent, Docker Linux ne peut tourner que sur un système hôte avec un <strong>kernel Linux</strong> compatible.  </li>
-</ul>
-<h2 id="installation">Installation</h2>
-<h3 id="convenience-script">Convenience script</h3>
-<p>Il est préférable d'utiliser le <a href="https://get.docker.com/?_gl=1*1wpfmkm*_ga*MTgzODY3NDQ4My4xNzM0NjE4ODQx*_ga_XJWPQMJYHQ*MTczNDYxODg0MC4xLjEuMTczNDYxODg0NS41NS4wLjA.">convenience script</a> pour une utilisation de docker <strong>hors production</strong>.  </p>
-<h3 id="windows">Windows</h3>
-<p><a href="https://www.docker.com/products/docker-desktop/">Télécharger</a></p>
-<h3 id="documentation">Documentation</h3>
-<p>https://docs.docker.com/engine/install/  </p>
-<h2 id="docker-exit">Docker Exit</h2>
-<p>Si le service qui tourne dans le container s'arrête le container est arrêté (exit)</p>
-<h2 id="commandes-de-bases">Commandes de bases</h2>
-<ul>
-<li><strong><code>docker run [image]</code></strong> : Lance un conteneur à partir d'une image.  </li>
-<li>-<strong><code>docker run [image] [cmd]</code></strong> : Lance un conteneur à partir d'une image et taper la cmd.  </li>
-<li><strong><code>docker run -d [image]</code></strong> : Lance un conteneur à partir d'une image et mode détaché  </li>
-<li><strong><code>docker run -it [image]</code></strong> : Interactive terminal, permet d'afficher les promet et taper un argument si l'application le demande. </li>
-<li><strong><code>docker run -p HostPort:ContainerPort [image]</code></strong> : port mapping</li>
-<li><strong><code>docker run -v HostVolume:ContainerVolume [image]</code></strong> : port mapping</li>
-<li><strong><code>docker inspect [container]</code></strong> : Détail d'un container</li>
-<li><strong><code>docker attach [container]</code></strong> : Se connecte au terminal d'un conteneur en cours d'exécution.</li>
-<li><strong><code>docker ps</code></strong> : Affiche les conteneurs en cours d'exécution.  </li>
-<li><strong><code>docker ps -a</code></strong> : Affiche tous les conteneurs, y compris ceux qui sont arrêtés.  </li>
-<li><strong><code>docker stop [container]</code></strong> : Arrête un conteneur en cours d'exécution.  </li>
-<li><strong><code>docker start [container]</code></strong> : Démarre un conteneur arrêté.  </li>
-<li><strong><code>docker restart [container]</code></strong> : Redémarre un conteneur.  </li>
-<li><strong><code>docker rm [container]</code></strong> : Supprime un conteneur arrêté.  </li>
-<li><strong><code>docker rmi [image]</code></strong> : Supprime une image Docker.  </li>
-<li><strong><code>docker build -t [image_name] [path]</code></strong> : Crée une image Docker à partir d'un Dockerfile.  </li>
-<li><strong><code>docker images</code></strong> : Liste les images disponibles localement.  </li>
-<li><strong><code>docker pull [image]</code></strong> : Télécharge une image depuis Docker Hub.  </li>
-<li><strong><code>docker push [image]</code></strong> : Envoie une image vers un registre Docker.  </li>
-<li><strong><code>docker exec -it [container] [command]</code></strong> : Exécute une commande dans un conteneur en cours d'exécution.  </li>
-<li><strong><code>docker logs [container]</code></strong> : Affiche les logs d'un conteneur.  </li>
-<li><strong><code>docker volume ls</code></strong> : Liste les volumes Docker.  </li>
-<li><strong><code>docker network ls</code></strong> : Liste les réseaux Docker.  </li>
-<li><strong><code>docker prune</code></strong> : Supprime les ressources inutilisées (conteneurs, images, volumes, réseaux)  </li>
-</ul>
-<h2 id="docker-hub">Docker Hub</h2>
-<p><a href="https://hub.docker.com/">Listes des images</a>  </p>
-<h2 id="acces-application-conteneurisee">Accès application conteneurisée</h2>
-<p><strong>1/ Depuis le host</strong><br />
-Utiliser l'adresse IP du container <code>docker inspect [container]</code> </p>
-<p><strong>2/ Depuis l'extérieur</strong><br />
-Faire du <a href="#commandes-de-bases">port mapping</a> <code>docker run -p</code>  </p>
-<h2 id="creer-image">Créer image</h2>
-<p><strong>1/ Créer un dockerfile</strong>  </p>
-<details>  
-<summary>Dockerfile example</summary>  
+<h1 id="mkdocs">Mkdocs</h1>
+<h4 id="1-installation-des-outils-necessaires"><strong>1. Installation des outils nécessaires</strong></h4>
+<p>Assure-toi d'avoir <strong>Python</strong> et <strong>MkDocs</strong> installés :</p>
+<pre><code># Installer MkDocs
+pip install mkdocs
 
-<pre><code># Utiliser une image Python comme base  
-FROM python:3.9-slim  
-
-# Définir le répertoire de travail  
-WORKDIR /app  
-
-# Copier les fichiers de l'application dans le conteneur  
-COPY requirements.txt ./  
-COPY app.py ./  
-
-# Installer les dépendances  
-RUN pip install --no-cache-dir -r requirements.txt  
-
-# Exposer le port utilisé par Flask  
-EXPOSE 5000  
-
-# Définir la commande pour lancer l'application Flask  
-CMD [&quot;python&quot;, &quot;app.py&quot;]  
+# (Optionnel) Installer le thème Material pour MkDocs
+pip install mkdocs-material
 </code></pre>
-
-</details>
-<p><strong>2/ builder l'image</strong>  </p>
-<pre><code>docker build -t flask-app .  
+<h4 id="2-creer-un-projet-mkdocs"><strong>2. Créer un projet MkDocs</strong></h4>
+<p>Dans le terminal, exécute :</p>
+<pre><code>mkdocs new mon-site
 </code></pre>
+<p>Cela crée la structure suivante :</p>
+<pre><code>mon-site/
+│── mkdocs.yml       # Fichier de configuration
+│── docs/            # Contient les fichiers Markdown
+    └── index.md     # Page d'accueil
+
+</code></pre>
+<h4 id="3-ajouter-tes-notes-obsidian"><strong>3. Ajouter tes notes Obsidian</strong></h4>
+<ul>
+<li>Copie tous tes fichiers <strong><code>.md</code></strong> dans le dossier <code>docs</code>.</li>
+<li>Structure ton contenu dans des sous-dossiers si nécessaire.  </li>
+</ul>
+<pre><code>docs/
+│── index.md
+│── Docker/
+│   └── Docker.md
+│── Jenkins/
+    └── Jenkins.md
+
+</code></pre>
+<h4 id="4-configurer-mkdocsyml"><strong>4. Configurer <code>mkdocs.yml</code></strong></h4>
+<p>Ouvre <strong><code>mkdocs.yml</code></strong> et configure la navigation et le thème :</p>
+<pre><code>site_name: Mes Notes
+nav:
+  - Accueil: index.md
+  - Docker: Docker/Docker.md
+  - Jenkins: Jenkins/Jenkins.md
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode sombre
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode clair
+</code></pre>
+<h4 id="5-tester-localement-le-site"><strong>5. Tester localement le site</strong></h4>
+<p>Lance la commande suivante pour voir ton site en local :</p>
+<pre><code>mkdocs serve
+</code></pre>
+<p>Accède à <code>http://127.0.0.1:8000</code> dans ton navigateur.</p>
+<h4 id="6-initialiser-le-depot-github"><strong>6. Initialiser le dépôt GitHub</strong></h4>
+<p>Si ton projet n'est pas encore lié à un dépôt GitHub, initialise-le :</p>
+<pre><code>git init
+git add .
+git commit -m &quot;Initialisation du projet MkDocs&quot;
+git remote add origin https://github.com/ton-utilisateur/ton-depot.git
+git push -u origin master
+</code></pre>
+<h4 id="7publier-sur-github-pages">7.<strong>Publier sur GitHub Pages</strong></h4>
+<p>Utilise la commande suivante pour déployer ton site :
+<code>mkdocs gh-deploy</code>
+Cela :</p>
+<ol>
+<li>Génère le site statique.</li>
+<li>Publie le site sur la branche <strong><code>gh-pages</code></strong> de ton dépôt GitHub.</li>
+</ol>
+<h4 id="8-activer-github-pages"><strong>8. Activer GitHub Pages</strong></h4>
+<ol>
+<li>Va dans ton dépôt GitHub → <strong>Settings</strong> → <strong>Pages</strong>.</li>
+<li>Choisis la branche <strong><code>gh-pages</code></strong> comme source.</li>
+<li>Ton site sera accessible à :</li>
+</ol>
+<pre><code>https://ton-utilisateur.github.io/ton-depot/
+</code></pre>
+<h4 id="9-mise-a-jour-du-site"><strong>9. Mise à jour du site</strong></h4>
+<ol>
+<li>Modifier les fichiers  </li>
+<li>Regénérer le site <code>mkdocs gh-deploy</code>  </li>
+<li>git add+commit+push (pour garder une copie du dossier)</li>
+</ol>
+<h4 id="utiliser-un-bloc-deroulant">Utiliser un bloc déroulant</h4>
+<p>Remplacer les <code>A et B</code> par <code>&lt; et &gt;</code>  </p>
 <blockquote>
-<p>Le deuxième build est plus rapide car les étapes de build (exemple : télécharge image ubuntu) ne sont pas rejouer  </p>
+<p>AdetailsB<br />
+AsummaryB Cliquer pour dérouler AsummaryB<br />
+trois altgr+4  <br />
+MON TEXTE<br />
+trois altgr+4<br />
+A/detailsB  </p>
 </blockquote>
-<p><strong>3/ Upload image</strong><br />
-A - Créer l'image avec le tag du repo (exemple omar) et pousser  </p>
-<pre><code>docker build -t omar/flask-app .  
-</code></pre>
-<p>B - Se connecter au repo</p>
-<pre><code>docker login
-</code></pre>
-<p>C - Pousser l'image</p>
-<pre><code>docker push omar/flask-app .
-</code></pre>
-<h2 id="references">Références</h2>
-<p><a href="https://www.coursera.org/learn/docker-basics-for-devops">Coursera - Docker Basics for DevOps</a>  </p>
+<h4 id="lien-hypertexte">Lien hypertexte</h4>
+<p><strong>Syntaxe</strong>: [lien](url)<br />
+<strong>Lien interne:</strong> [lien vers header](#mon-header)  </p>
 
 
 
