@@ -1,0 +1,28 @@
+site_name: Omar's Notes
+nav:
+  - Ansible: Ansible/Ansible.md
+  - AWS: AWS/AWS.md
+  - Docker: Docker/Docker.md
+  - Git: Git/Git.md
+  - Jenkins: Jenkins/Jenkins.md
+  - K8S: K8S/K8S.md
+  - Mkdocs: Mkdocs/Mkdocs.md
+  - Terraform: Terraform/Terraform.md
+  - WSL: WSL/WSL.md
+
+theme:
+  name: material  # Thème moderne pour MkDocs
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Basculer en mode sombre
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Basculer en mode clair
+    - toc.integrate: true
