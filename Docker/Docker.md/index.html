@@ -289,6 +289,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Docker-compose/Docker-compose.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Git/Git.md" class="md-nav__link">
         
   
@@ -354,6 +374,26 @@
   
   <span class="md-ellipsis">
     Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projets/Projets.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projets
   </span>
   
 
@@ -992,21 +1032,31 @@ Garantit <strong>sécurité</strong> et <strong>confidentialité</strong> entre 
 `docker run --mount type=volume,source=myvolume,target=/path/container <image>  </li>
 </ul>
 <h2 id="reseaux-docker">Réseaux Docker</h2>
-<p><a href="#reseauvolume">Commandes</a>  <br />
-- <strong>Bridge</strong> : <br />
-    - Utilisé par défaut si aucun réseau n'est spécifié<br />
-    - Chaque conteneur obtient une adresse IP privée dans la plage 172.17.0.0/24
-    - Les containers communiquent entre eux avec les IP privées
-    - Pour un accès externe aux containers il faut faire du port mapping 
-    - Créer un <a href="#reseauvolume">nouveau subnet</a>
-- <strong>Host</strong> : <br />
-    - Le conteneur utilise le réseau de l’hôte, partageant l’IP de l’hôte pour les connexions réseau.<br />
-    - Le service/port lancé dans le container est accessible directement depuis l'IP/port du host 
-- <strong>None</strong> : <br />
-    - Aucun réseau n’est connecté au conteneur, utilisé pour l'isolement total.<br />
-- <strong>DNS :</strong>
-    - Serveur DNS 127.0.0.11
-    - Les conteneurs peuvent être résolus par leurs noms depuis un autre container  </p>
+<p><a href="#reseauvolume">Commandes</a>   </p>
+<ul>
+<li><strong>Bridge</strong> :   <ul>
+<li>Utilisé par défaut si aucun réseau n'est spécifié    </li>
+<li>Chaque conteneur obtient une adresse IP privée dans la plage 172.17.0.0/24  </li>
+<li>Les containers communiquent entre eux avec les IP privées  </li>
+<li>Pour un accès externe aux containers il faut faire du port mapping   </li>
+<li>Créer un <a href="#reseauvolume">nouveau subnet</a>  </li>
+</ul>
+</li>
+<li><strong>Host</strong> :   <ul>
+<li>Le conteneur utilise le réseau de l’hôte, partageant l’IP de l’hôte pour les connexions réseau.  </li>
+<li>Le service/port lancé dans le container est accessible directement depuis l'IP/port du host  </li>
+</ul>
+</li>
+<li><strong>None</strong> :   <ul>
+<li>Aucun réseau n’est connecté au conteneur, utilisé pour l'isolement total.  </li>
+</ul>
+</li>
+<li><strong>DNS :</strong>  <ul>
+<li>Serveur DNS 127.0.0.11</li>
+<li>Les conteneurs peuvent être résolus par leurs noms depuis un autre container  </li>
+</ul>
+</li>
+</ul>
 <h2 id="registry-prive">Registry privé</h2>
 <p><strong>1/ Lancer le conteneur Registry</strong><br />
 <code>docker run -d -p 5000:5000 --name registry registry:2</code><br />

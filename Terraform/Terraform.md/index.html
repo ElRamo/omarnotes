@@ -289,6 +289,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Docker-compose/Docker-compose.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Git/Git.md" class="md-nav__link">
         
   
@@ -354,6 +374,26 @@
   
   <span class="md-ellipsis">
     Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projets/Projets.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projets
   </span>
   
 
@@ -684,9 +724,78 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#immutable-inimutable" class="md-nav__link">
+  <a href="#lifecycle-policies" class="md-nav__link">
     <span class="md-ellipsis">
-      Immutable (Inimutable)
+      Lifecycle policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immutable-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immutable resource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lifecycles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for_each" class="md-nav__link">
+    <span class="md-ellipsis">
+      for_each
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentification-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentification AWS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules
     </span>
   </a>
   
@@ -726,8 +835,14 @@ Les providers offrent des ressources que l'on peut utiliser pour déployer.   </
 <p>Le <strong>provider</strong> <code>AWS</code>, par exemple, propose la <strong>ressource</strong> <code>aws_ec2_instance_state</code>, qui permet de modifier l'état d'une instance EC2  </p>
 <p><strong>Repository</strong><br />
 <a href="https://registry.terraform.io/browse/providers">Browse Providers | Terraform Registry</a>  </p>
-<p><strong>Répertoire de télécharge</strong><br />
-<code>monDossier/.terraform/providers/</code></p>
+<p><strong>Répertoire de téléchargement</strong>
+<code>monDossier/.terraform/providers/</code>  </p>
+<p><strong>Utiliser une version spécifique d'un provider</strong> <br />
+1. Aller sur le Registre Terraform<br />
+2. Choisir la version du provider<br />
+3. Cliquer sur "Use Provider"<br />
+4. Copier la configuration dans <code>main.tf</code> ou <code>providers.tf</code><br />
+5. Initialiser votre projet avec <code>terraform init</code>  </p>
 <h2 id="commandes-de-base">Commandes de base</h2>
 <ul>
 <li><strong><code>terraform init</code></strong> : Initialise le répertoire de travail avec les plugins nécessaires pour utiliser Terraform.  </li>
@@ -738,6 +853,7 @@ Les providers offrent des ressources que l'on peut utiliser pour déployer.   </
 <li><strong><code>terraform apply</code></strong> : Applique les changements planifiés pour créer ou modifier l'infrastructure.  </li>
 <li><strong><code>terraform apply -refresh-only</code></strong> : Met à jour le state sans modifier l'infrastructure  </li>
 <li><strong><code>terraform show</code></strong> : Affiche les détails de l’état ou du plan.  </li>
+<li><strong><code>terraform state show provider_resourcename</code></strong> :  affiche les détails d'une ressource spécifique telle qu'elle est enregistrée dans l'état Terraform  </li>
 <li><strong><code>terraform output</code></strong> : Montre les valeurs des sorties définies dans le fichier Terraform.  </li>
 <li><strong><code>terraform output</code></strong> : Affiche les valeurs des outputs définis dans le fichier de configuration après l'exécution de <code>terraform apply</code>  </li>
 <li><strong><code>terraform providers</code></strong> : Liste les providers utilisés dans la configuration.  </li>
@@ -1025,19 +1141,187 @@ Il est possible aussi d'afficher les outputs avec <code>terraform output</code> 
 <code>apt install graphviz -y</code><br />
 <strong>2/ Générer le graphe</strong><br />
 <code>terraform graph | dot -Tsvc &gt; graph.svg</code>  </p>
-<h2 id="immutable-inimutable">Immutable (Inimutable)</h2>
+<h2 id="lifecycle-policies">Lifecycle policies</h2>
+<h3 id="immutable-resource">Immutable resource</h3>
 <p><strong>Immutable</strong>: Si une modification est nécessaire, la ressource doit être détruite et recréée</p>
+<h3 id="lifecycles">Lifecycles</h3>
+<p><strong>prevent_destroy</strong>: Permet d'empêcher la suppression de la resource lors de <code>terraform apply</code> et <code>terraform destroy</code></p>
 <pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
   ami           = &quot;ami-123456&quot;
   instance_type = &quot;t2.micro&quot;
 
   lifecycle {
     prevent_destroy = true
+  }
+}
+</code></pre>
+<p><strong>create_before_destroy</strong> force la création d'une nouvelle ressource avant de détruire l'ancienne, minimisant les interruptions.</p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-123456&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  lifecycle {
     create_before_destroy= true
   }
 }
 </code></pre>
-<p><strong>prevent_destroy</strong>: Permet d'empêcher la suppression de la resource lors de <code>terraform apply</code>. Cependant, la resource sera tout de même supprimée si <code>terraform destroy</code></p>
+<p><strong>ignore_changes</strong> : Ignore certaines modifications sur des attributs spécifiés.</p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  lifecycle {
+    ignore_changes = [
+      tags[&quot;Environment&quot;],  # Ignore les changements sur le tag &quot;Environment&quot;
+      root_block_device     # Ignore les changements sur les paramètres du disque
+      ignore_changes = all # Peut importe l'attribut changé
+    ]
+  }
+}
+</code></pre>
+<h2 id="datasources">Datasources</h2>
+<p>Les <strong>datasources</strong> dans Terraform permettent de lire des données externes ou existantes pour les utiliser dans la configuration sans les gérer directement.  </p>
+<pre><code># Lire une AMI existante
+data &quot;aws_ami&quot; &quot;example&quot; {
+  most_recent = true
+  owners      = [&quot;amazon&quot;]
+
+  filter {
+    name   = &quot;name&quot;
+    values = [&quot;amzn2-ami-hvm-*&quot;]
+  }
+}
+
+# Utiliser la datasource dans une ressource
+resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = data.aws_ami.example.id
+  instance_type = &quot;t2.micro&quot;
+}
+</code></pre>
+<h2 id="count">Count</h2>
+<p>La <strong>fonction <code>count</code></strong> dans Terraform permet de créer <strong>plusieurs instances d'une ressource</strong> en fonction d'un nombre donné.  </p>
+<div class="admonition attention">
+<p class="admonition-title">Important</p>
+<p>Si un élément de la liste est supprimé, toutes les ressources seront recréées à cause du changement d'index.</p>
+</div>
+<p><strong>Exemple</strong> <br />
+main.tf  </p>
+<pre><code>variable &quot;instance_names&quot; {
+  type    = list(string)
+  default = [&quot;instance-1&quot;, &quot;instance-2&quot;, &quot;instance-3&quot;]
+}
+
+resource &quot;aws_instance&quot; &quot;example&quot; {
+  count = length(var.instance_names)
+
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  tags = {
+    Name = var.instance_names[count.index]
+  }
+}
+</code></pre>
+<p>variables.tf</p>
+<pre><code>variable &quot;instance_names&quot; {
+  description = &quot;Liste des noms des instances&quot;
+  type        = list(string)
+}
+</code></pre>
+<h2 id="for_each">for_each</h2>
+<p>La fonction <strong><code>for_each</code></strong> permet de créer plusieurs instances d'une ressource en fonction d'un <strong>set</strong> ou d'une <strong>map</strong>. <br />
+Elle génère un <strong>output de type map</strong>  </p>
+<p><strong>Exemple 1 :</strong> Utilisation d'une variable de type <strong>set</strong> dans <code>main.tf</code> <br />
+<code>variables.tf</code>   </p>
+<pre><code>variable &quot;instance_names&quot; {
+  type    = set(string)
+  default = [&quot;instance-1&quot;, &quot;instance-2&quot;, &quot;instance-3&quot;]
+}
+</code></pre>
+<p><code>main.tf</code>   </p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  for_each = var.instance_names
+
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  tags = {
+    Name = each.value
+  }
+}
+
+output &quot;instance_ids&quot; {
+  value = aws_instance.example
+}
+</code></pre>
+<p><strong>Exemple 2 :</strong> Utilisation de <code>toset</code> pour convertir une liste en <strong>set</strong> dans <code>main.tf</code><br />
+<code>main.tf</code>  </p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  for_each = toset([&quot;instance-1&quot;, &quot;instance-2&quot;, &quot;instance-3&quot;])
+
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  tags = {
+    Name = each.value
+  }
+}
+
+output &quot;instance_ids&quot; {
+  value = aws_instance.example
+}
+</code></pre>
+<h2 id="authentification-aws">Authentification AWS</h2>
+<p><strong>Méthode 1</strong><br />
+1/ Installer <strong>aws-cli</strong><br />
+2/ Créer un <strong>utilisateur IAM</strong> + <strong>Access key</strong><br />
+3/ Lancer <code>aws configure</code><br />
+4/ Configurer <strong>terraform</strong>  </p>
+<pre><code>terraform {
+  required_providers {
+    aws = {
+      source = &quot;hashicorp/aws&quot;
+      version = &quot;5.82.2&quot;
+    }
+  }
+}
+provider &quot;aws&quot; {
+  region = &quot;eu-south-2&quot;
+  profile = &quot;your-profile&quot;
+}
+</code></pre>
+<p><strong>Méthode 2</strong><br />
+Créer le fichier <strong>credentials</strong>  </p>
+<pre><code>[default]
+aws_access_key_id = YOUR_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+aws_session_token = YOUR_SESSION_TOKEN  # Optionnel, pour des sessions temporaires
+
+[profile-name]
+aws_access_key_id = YOUR_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+aws_session_token = YOUR_SESSION_TOKEN  # Optionnel
+
+</code></pre>
+<p>Faire appel au fichier credentials dans <strong>provider.tf</strong>  </p>
+<pre><code>provider &quot;aws&quot; {
+  region                   = &quot;eu-west-1&quot;
+  shared_credentials_files = [&quot;/chemin/credentials&quot;]
+}
+</code></pre>
+<h2 id="modules">Modules</h2>
+<p><strong>1/ Créer une structure de dossier</strong> :   </p>
+<pre><code>my-module/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+</code></pre>
+<p><strong>2/ Utilisation du Module</strong>  </p>
+<pre><code>module &quot;ec2_instance&quot; {
+  source        = &quot;./my-module&quot;
+  region        = &quot;us-west-2&quot;
+  ami_id        = &quot;ami-12345678&quot;
+  instance_type = &quot;t3.micro&quot;
+  instance_name = &quot;MyInstance&quot;
+}
+</code></pre>
 
 
 

@@ -16,7 +16,7 @@
     
     
       
-        <title>Mkdocs - Omar's Notes</title>
+        <title>Docker-compose - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mkdocs" class="md-skip">
+        <a href="#docker-compose" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mkdocs
+              Docker-compose
             
           </span>
         </div>
@@ -289,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Docker-compose/Docker-compose.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -369,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -469,108 +469,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-installation-des-outils-necessaires" class="md-nav__link">
+  <a href="#definition" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Installation des outils nécessaires
+      Définition
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-creer-un-projet-mkdocs" class="md-nav__link">
+  <a href="#commandes-de-base" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Créer un projet MkDocs
+      Commandes de base
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-ajouter-tes-notes-obsidian" class="md-nav__link">
+  <a href="#version-du-compose" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Ajouter tes notes Obsidian
+      Version du compose
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-configurer-mkdocsyml" class="md-nav__link">
+  <a href="#exemple-docker-composeyml" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Configurer mkdocs.yml
+      Exemple docker-compose.yml
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-tester-localement-le-site" class="md-nav__link">
+  <a href="#scaling" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Tester localement le site
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-initialiser-le-depot-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Initialiser le dépôt GitHub
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7publier-sur-github-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      7.Publier sur GitHub Pages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-activer-github-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Activer GitHub Pages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-mise-a-jour-du-site" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Mise à jour du site
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#utiliser-un-bloc-deroulant" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utiliser un bloc déroulant
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lien-hypertexte" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lien hypertexte
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bloque-important" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bloque Important
+      Scaling
     </span>
   </a>
   
@@ -591,119 +528,70 @@
                   
 
 
-<h1 id="mkdocs">Mkdocs</h1>
-<h4 id="1-installation-des-outils-necessaires"><strong>1. Installation des outils nécessaires</strong></h4>
-<p>Assure-toi d'avoir <strong>Python</strong> et <strong>MkDocs</strong> installés :</p>
-<pre><code># Installer MkDocs
-pip install mkdocs
-
-# (Optionnel) Installer le thème Material pour MkDocs
-pip install mkdocs-material
-</code></pre>
-<h4 id="2-creer-un-projet-mkdocs"><strong>2. Créer un projet MkDocs</strong></h4>
-<p>Dans le terminal, exécute :</p>
-<pre><code>mkdocs new mon-site
-</code></pre>
-<p>Cela crée la structure suivante :</p>
-<pre><code>mon-site/
-│── mkdocs.yml       # Fichier de configuration
-│── docs/            # Contient les fichiers Markdown
-    └── index.md     # Page d'accueil
-
-</code></pre>
-<h4 id="3-ajouter-tes-notes-obsidian"><strong>3. Ajouter tes notes Obsidian</strong></h4>
+<h1 id="docker-compose">Docker-compose</h1>
+<h2 id="definition">Définition</h2>
+<p><strong>Docker Compose</strong> est un outil pour définir et gérer des applications multi-conteneurs Docker à l’aide d’un fichier YAML.  </p>
+<h2 id="commandes-de-base">Commandes de base</h2>
 <ul>
-<li>Copie tous tes fichiers <strong><code>.md</code></strong> dans le dossier <code>docs</code>.</li>
-<li>Structure ton contenu dans des sous-dossiers si nécessaire.  </li>
+<li><strong><code>docker-compose up</code></strong> : Démarre les conteneurs définis.  </li>
+<li><strong><code>docker-compose down</code></strong> : Arrête et supprime les conteneurs, réseaux et volumes.  </li>
+<li><strong><code>docker-compose ps</code></strong> : Liste les conteneurs en cours d’exécution.  </li>
+<li><strong><code>docker-compose logs</code></strong> : Affiche les journaux des conteneurs.  </li>
+<li><strong><code>docker-compose build</code></strong> : Construit ou reconstruit les images.  </li>
+<li><strong><code>docker-compose exec</code></strong> : Exécute une commande dans un conteneur en cours d’exécution.  </li>
 </ul>
-<pre><code>docs/
-│── index.md
-│── Docker/
-│   └── Docker.md
-│── Jenkins/
-    └── Jenkins.md
+<h2 id="version-du-compose">Version du compose</h2>
+<h2 id="exemple-docker-composeyml">Exemple docker-compose.yml</h2>
+<details><summary>docker-compose.yml</summary>
 
+
+<pre><code>version: '3.9' # Version du format Compose
+
+services:
+  app:
+    image: my-app:latest
+    build:
+      context: ./app
+    ports:
+      - &quot;8080:80&quot; # Mappe le port 80 du conteneur au port 8080 de l’hôte
+    environment:
+      - APP_ENV=production
+    volumes:
+      - ./data:/app/data
+    networks:
+      - my-network
+    restart: always
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
 </code></pre>
-<h4 id="4-configurer-mkdocsyml"><strong>4. Configurer <code>mkdocs.yml</code></strong></h4>
-<p>Ouvre <strong><code>mkdocs.yml</code></strong> et configure la navigation et le thème :</p>
-<pre><code>site_name: Mes Notes
-nav:
-  - Accueil: index.md
-  - Docker: Docker/Docker.md
-  - Jenkins: Jenkins/Jenkins.md
-theme:
-  name: material
-  palette:
-    - scheme: default
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/weather-sunny
-        name: Basculer en mode sombre
-    - scheme: slate
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/weather-night
-        name: Basculer en mode clair
-</code></pre>
-<h4 id="5-tester-localement-le-site"><strong>5. Tester localement le site</strong></h4>
-<p>Lance la commande suivante pour voir ton site en local :</p>
-<pre><code>mkdocs serve
-</code></pre>
-<p>Accède à <code>http://127.0.0.1:8000</code> dans ton navigateur.</p>
-<h4 id="6-initialiser-le-depot-github"><strong>6. Initialiser le dépôt GitHub</strong></h4>
-<p>Si ton projet n'est pas encore lié à un dépôt GitHub, initialise-le :</p>
-<pre><code>git init
-git add .
-git commit -m &quot;Initialisation du projet MkDocs&quot;
-git remote add origin https://github.com/ton-utilisateur/ton-depot.git
-git push -u origin master
-</code></pre>
-<h4 id="7publier-sur-github-pages">7.<strong>Publier sur GitHub Pages</strong></h4>
-<p>Utilise la commande suivante pour déployer ton site :
-<code>mkdocs gh-deploy</code>
-Cela :</p>
-<ol>
-<li>Génère le site statique.</li>
-<li>Publie le site sur la branche <strong><code>gh-pages</code></strong> de ton dépôt GitHub.</li>
-</ol>
-<h4 id="8-activer-github-pages"><strong>8. Activer GitHub Pages</strong></h4>
-<ol>
-<li>Va dans ton dépôt GitHub → <strong>Settings</strong> → <strong>Pages</strong>.</li>
-<li>Choisis la branche <strong><code>gh-pages</code></strong> comme source.</li>
-<li>Ton site sera accessible à :</li>
-</ol>
-<pre><code>https://ton-utilisateur.github.io/ton-depot/
-</code></pre>
-<h4 id="9-mise-a-jour-du-site"><strong>9. Mise à jour du site</strong></h4>
-<ol>
-<li>Modifier les fichiers  </li>
-<li>git add+commit+push (pour garder une copie du dossier)  </li>
-<li>Regénérer le site <code>mkdocs gh-deploy</code>  </li>
-</ol>
-<h4 id="utiliser-un-bloc-deroulant">Utiliser un bloc déroulant</h4>
-<p>Remplacer les <code>A et B</code> par <code>&lt; et &gt;</code>  </p>
-<blockquote>
-<p>AdetailsB<br />
-AsummaryB Cliquer pour dérouler AsummaryB<br />
-trois altgr+4  <br />
-MON TEXTE<br />
-trois altgr+4<br />
-A/detailsB  </p>
-</blockquote>
-<h4 id="lien-hypertexte">Lien hypertexte</h4>
-<p><strong>Syntaxe</strong>: [lien](url)<br />
-<strong>Lien interne:</strong> [lien vers header](#mon-header)  </p>
-<h4 id="bloque-important">Bloque Important</h4>
-<p>Ajouter dans <strong>mkdocs.yml</strong></p>
-<pre><code>markdown_extensions:
-  - admonition
-</code></pre>
-<p>Utiliser ensuite :  </p>
-<pre><code>!!! attention &quot;Important&quot;
-    Mon Texte
-</code></pre>
+
+</details>
+
+<h2 id="scaling">Scaling</h2>
+<p><strong>Important</strong>  </p>
+<ul>
+<li>Le scaling fonctionne uniquement si le service est <strong>stateless</strong> (pas de conflit sur les ports ou volumes)</li>
+<li>Pour les services <strong>stateful</strong> (ex. bases de données), un orchestrateur comme <strong>Docker Swarm</strong> ou <strong>Kubernetes</strong> est recommandé.  </li>
+</ul>
+<p><strong>Commande</strong><br />
+<code>docker-compose up --scale service1=3 --scale service2=2</code></p>
 
 
 

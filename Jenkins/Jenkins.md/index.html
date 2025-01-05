@@ -289,6 +289,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Docker-compose/Docker-compose.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Git/Git.md" class="md-nav__link">
         
   
@@ -354,6 +374,26 @@
   
   <span class="md-ellipsis">
     Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projets/Projets.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projets
   </span>
   
 
@@ -693,6 +733,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#a-venir" class="md-nav__link">
     <span class="md-ellipsis">
       A venir
@@ -935,6 +984,23 @@ Pour lancer <strong>manuellement</strong> :<br />
 <p>Définir le <code>script</code> du pipeline directement ou spécifier un <code>GitHub Project</code> contenant un fichier <code>Jenkinsfile</code> (voir la rubrique pipeline plus haut)</p>
 <h2 id="ajouter-un-nud">Ajouter un nœud</h2>
 <p>Aller dans <code>Manage Jenkins &gt; Nodes &gt; New Node</code></p>
+<h2 id="environment">Environment</h2>
+<p>Permet de définir des variables dans une pipeline déclarative  </p>
+<pre><code>pipeline {
+    agent any
+    environment {
+        MY_VAR = 'Hello'
+        PATH = &quot;${env.PATH}:/custom/path&quot;
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo &quot;Value of MY_VAR: ${env.MY_VAR}&quot;
+            }
+        }
+    }
+}
+</code></pre>
 <h2 id="a-venir">A venir</h2>
 <ul>
 <li><strong>Gestion des utilisateurs</strong> :  <ul>
