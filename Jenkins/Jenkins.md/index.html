@@ -249,6 +249,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Apache/Apache.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../AWS/AWS.md" class="md-nav__link">
         
   
@@ -294,6 +314,26 @@
   
   <span class="md-ellipsis">
     Docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ELK/ELK.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
   </span>
   
 
@@ -369,6 +409,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Linux/Linux.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
         
   
@@ -414,6 +474,26 @@
   
   <span class="md-ellipsis">
     Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vault/Vault.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vault
   </span>
   
 
@@ -742,6 +822,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aws-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS Plugin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#params" class="md-nav__link">
+    <span class="md-ellipsis">
+      Params
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#a-venir" class="md-nav__link">
     <span class="md-ellipsis">
       A venir
@@ -1000,6 +1098,50 @@ Pour lancer <strong>manuellement</strong> :<br />
         }
     }
 }
+</code></pre>
+<h2 id="aws-plugin">AWS Plugin</h2>
+<ol>
+<li>Installer le plugin <code>Pipeline: AWS Steps Version</code>  </li>
+<li>Aller dans <code>Manage jenkins &gt; Credentials &gt; System &gt; Global credentials (unrestricted)</code>  </li>
+<li>Ajouter un nouveau credential <strong>AWS</strong><br />
+   a- <code>ID :</code> Choisir un nom qui sera utilisé plus tard dans la pipeline<br />
+   b- AccessKey<br />
+   c-  SecretKey<br />
+Exemple de <strong>pipeline</strong>  </li>
+</ol>
+<pre><code>stage('Terraform Init') {
+            steps {
+               withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-crendentails-rwagh']]){
+                    dir('infra') {
+                    sh 'echo &quot;=================Terraform Init==================&quot;'                          sh 'terraform init'
+                }
+            }
+        }
+}                                                                                      
+</code></pre>
+<h2 id="params">Params</h2>
+<p><strong>Définir</strong> les paramètres dans la pipeline  </p>
+<pre><code>pipeline {
+    agent any
+    parameters {
+            booleanParam(name: 'PLAN_TERRAFORM', defaultValue: false, description: 'Check to plan Terraform changes')
+    }
+</code></pre>
+<p><strong>Faire appel</strong> au paramètre  </p>
+<pre><code>stage('Terraform Plan') {
+    steps {
+        script {
+            if (params.PLAN_TERRAFORM) {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-crendentails-rwagh']]){
+                    dir('infra') {
+                        sh 'echo &quot;=================Terraform Plan==================&quot;'
+                        sh 'terraform plan'
+                    }
+                }
+            }
+        }
+    }
+} 
 </code></pre>
 <h2 id="a-venir">A venir</h2>
 <ul>

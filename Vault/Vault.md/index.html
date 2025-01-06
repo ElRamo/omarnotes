@@ -16,7 +16,7 @@
     
     
       
-        <title>AWS - Omar's Notes</title>
+        <title>Vault - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws" class="md-skip">
+        <a href="#vault" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS
+              Vault
             
           </span>
         </div>
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../AWS/AWS.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -489,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Vault/Vault.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,9 +549,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#dev-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentation
+      Dev mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-gerer-les-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI - gérer les secrets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets-engines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secrets Engines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets-dynamiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secrets dynamiques
     </span>
   </a>
   
@@ -572,9 +599,68 @@
                   
 
 
-<h1 id="aws">AWS</h1>
-<h2 id="documentation">Documentation</h2>
-<p><a href="https://elramo.github.io/ElRamo/">Accéder à la documentation AWS</a></p>
+<h1 id="vault">Vault</h1>
+<h2 id="dev-mode">Dev mode</h2>
+<ul>
+<li>Démarrer rapidement un serveur pour des tests ou de l'<strong>apprentissage</strong>.   </li>
+<li>Il est <strong>non sécurisé</strong>  </li>
+<li>Utilise un <strong>storage inmem</strong> qui est éphémère  </li>
+</ul>
+<p><strong>1/ démarrer Vault en mode développement</strong> <br />
+<code>vault server -dev</code>  </p>
+<p><strong>2/ Exporter l'adresse et le token</strong>  </p>
+<pre><code>export VAULT_ADDR='http://127.0.0.1:8200'
+export VAULT_TOKEN='&lt;dev-root-token&gt;'
+</code></pre>
+<p><strong>3/ Tester la connexion</strong><br />
+<code>vault status</code>  </p>
+<h2 id="cli-gerer-les-secrets">CLI - gérer les secrets</h2>
+<ol>
+<li>
+<p>Créer un chemin (activer le moteur de secrets KV) :<br />
+<code>vault secrets enable -path=&lt;nom_du_path&gt; kv</code>  </p>
+</li>
+<li>
+<p>Créer ou mettre à jour un secret (KV) :  <br />
+<code>vault kv put &lt;path&gt;/&lt;clé&gt; &lt;nom_de_clé&gt;=&lt;valeur&gt;</code>  </p>
+</li>
+<li>
+<p>Récupérer un secret :<br />
+<code>vault kv get &lt;path&gt;/</code>vault kv get <path>/<clé><code></code>vault kv get -format=json <path>/<clé>`  </p>
+</li>
+<li>
+<p>Supprimer un secret : <br />
+<code>vault kv delete &lt;path&gt;/&lt;clé&gt;</code>  </p>
+</li>
+<li>Afficher tous les paths<br />
+<code>vault secrets list</code></li>
+</ol>
+<h2 id="secrets-engines">Secrets Engines</h2>
+<p>Gère un <strong>type spécifique</strong> de données ou d'opérations (ex. : KV, PKI, DB credentials, AWS).    </p>
+<p><a href="https://developer.hashicorp.com/vault/docs/secrets#secrets-engines">Liste des secrets engines disponibles</a>  </p>
+<p><strong>Activer un secret engine</strong> <br />
+<code>vault secrets enable -path=&lt;path&gt; &lt;type&gt;</code>  </p>
+<p><strong>Désactiver un secret engine</strong><br />
+<code>vault secrets disable &lt;path&gt;</code>  </p>
+<h2 id="secrets-dynamiques">Secrets dynamiques</h2>
+<p>Il est possible de générer <strong>dynamiquement</strong> secrets grâce aux <strong>secrets engines</strong>.<br />
+<strong>Exemple AWS</strong> <a href="https://developer.hashicorp.com/vault/docs/secrets/aws">documentation</a>  </p>
+<p><strong>1/</strong> Activer le moteur de secrets AWS dans Vault  </p>
+<pre><code>vault secrets enable aws
+</code></pre>
+<p><strong>2/</strong> Configurer les identifiants AWS dans Vault  </p>
+<pre><code>vault write aws/config/root \
+    access_key=$access \
+    secret_key=$secret$ \
+    region=us-east-1
+</code></pre>
+<p><strong>3/</strong> Créer un rôle (my-role) Vault avec une politique IAM (CLI ou GUI)<br />
+<strong>4/</strong> Générer des credentials temporaires via le rôle</p>
+<pre><code>vault read aws/creds/my-role
+</code></pre>
+<p><strong>5/</strong> Vérifier l'expiration des credentials  </p>
+<pre><code>vault read aws/stats
+</code></pre>
 
 
 

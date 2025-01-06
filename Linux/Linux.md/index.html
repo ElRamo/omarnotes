@@ -16,7 +16,7 @@
     
     
       
-        <title>AWS - Omar's Notes</title>
+        <title>Linux - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws" class="md-skip">
+        <a href="#linux" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS
+              Linux
             
           </span>
         </div>
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../AWS/AWS.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -409,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Linux/Linux.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,9 +549,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#apt" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentation
+      APT
     </span>
   </a>
   
@@ -572,9 +572,36 @@
                   
 
 
-<h1 id="aws">AWS</h1>
-<h2 id="documentation">Documentation</h2>
-<p><a href="https://elramo.github.io/ElRamo/">Accéder à la documentation AWS</a></p>
+<h1 id="linux">Linux</h1>
+<h2 id="apt">APT</h2>
+<p><strong>Trouver la source d'un package installé</strong><br />
+<code>apt-cache policy $package</code>  </p>
+<p><strong>Installer un package depuis un repo spécifique</strong><br />
+<code>apt -t $repo install $package</code>  </p>
+<p><strong>Afficher les packages disponibles dans le repo</strong><br />
+<code>apt-cache search $package</code><br />
+<code>apt-cache showpkg $package</code>  </p>
+<p><strong>Installer un package depuis internet</strong><br />
+<code>wget -P $url</code><br />
+<code>dpkg -i $package</code>  </p>
+<p><strong>Créer un repo local</strong> <br />
+1/ Télécharger paquets<br />
+<code>apt-get download  $paquet</code> <br />
+<code>rename 's/%3a/:/' *.deb</code><br />
+2/ Créer le référenciel  <br />
+<code>dpkg-scanpackages ./ /dev/null | gzip -9c &gt; Packages.gz</code>  <br />
+3/ Configurer le repo local  </p>
+<pre><code>rm -f /etc/apt/sources.list.d/*
+echo &quot;deb [trusted=yes] file:/var/repo-local ./&quot; &gt; /etc/apt/sources.list
+apt-get update
+</code></pre>
+<p><strong>Répertoires à connaitre</strong><br />
+Archive des .deb téléchargé avec apt-get install<br />
+<code>/var/cache/apt/archives/</code>  </p>
+<p><strong>Créer un .deb depuis un paquet installé</strong><br />
+<code>dpkg-repack gparted</code>  </p>
+<p><strong>Supprimer et purger un paquet</strong><br />
+<code>apt-get autoremove --purge</code></p>
 
 
 

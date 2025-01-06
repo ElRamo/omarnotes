@@ -16,7 +16,7 @@
     
     
       
-        <title>AWS - Omar's Notes</title>
+        <title>Apache - Omar's Notes</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws" class="md-skip">
+        <a href="#apache" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS
+              Apache
             
           </span>
         </div>
@@ -249,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Apache/Apache.md" class="md-nav__link">
+      <a href="." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../../AWS/AWS.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -549,9 +549,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#script-connection-htaccess" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentation
+      Script connection htaccess
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      Call php
     </span>
   </a>
   
@@ -572,9 +581,26 @@
                   
 
 
-<h1 id="aws">AWS</h1>
-<h2 id="documentation">Documentation</h2>
-<p><a href="https://elramo.github.io/ElRamo/">Accéder à la documentation AWS</a></p>
+<h1 id="apache">Apache</h1>
+<h2 id="script-connection-htaccess">Script connection htaccess</h2>
+<pre><code>if [ -z &quot;$user&quot; ]; then
+    echo -n 'LDAP User &gt; '
+    read user
+fi
+
+if [ -z &quot;$password&quot; ]; then
+    echo -n 'LDAP Password &gt; '
+    read -s password
+    echo
+fi
+
+curl -u &quot;$user:$password&quot; -k 'http://mywebsite/deleteme.php'
+
+</code></pre>
+<h2 id="call-php">Call php</h2>
+<p>vim test.php<br />
+<code>&lt;?php sleep(600);&gt;</code><br />
+curl http://vhost/test.php  </p>
 
 
 

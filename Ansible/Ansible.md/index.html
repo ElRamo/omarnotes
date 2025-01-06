@@ -249,6 +249,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Apache/Apache.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../AWS/AWS.md" class="md-nav__link">
         
   
@@ -294,6 +314,26 @@
   
   <span class="md-ellipsis">
     Docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ELK/ELK.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
   </span>
   
 
@@ -369,6 +409,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Linux/Linux.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
         
   
@@ -414,6 +474,26 @@
   
   <span class="md-ellipsis">
     Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vault/Vault.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vault
   </span>
   
 
@@ -495,6 +575,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interpreter-python3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreter python3
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -542,6 +631,19 @@ handlers:
 </code></pre>
 
 </details>
+
+<h2 id="interpreter-python3">Interpreter python3</h2>
+<p><strong>ansible.cfg</strong>   </p>
+<pre><code>[defaults]
+interpreter_python = /usr/bin/python3
+</code></pre>
+<p><strong>inventaire</strong>  </p>
+<pre><code>[your_group]
+host1 ansible_python_interpreter=/usr/bin/python3
+host2 ansible_python_interpreter=/usr/bin/python3
+[your_group:vars]
+ansible_python_interpreter=/usr/bin/python3
+</code></pre>
 
 
 
