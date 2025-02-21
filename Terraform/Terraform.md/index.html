@@ -1,0 +1,1478 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Terraform - Omar's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#terraform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Omar&#39;s Notes" class="md-header__button md-logo" aria-label="Omar's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Omar's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Terraform
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_2">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Omar&#39;s Notes" class="md-nav__button md-logo" aria-label="Omar's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Omar's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ansible/Ansible.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Apache/Apache.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apache
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AWS/AWS.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AWS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Docker.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker-compose/Docker-compose.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker-compose
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ELK/ELK.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Git/Git.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Jenkins/Jenkins.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../K8S/K8S.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    K8S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Linux/Linux.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Mkdocs/Mkdocs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mkdocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projets/Projets.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Python/Python.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Vault/Vault.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WSL/WSL.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fichier-terraformtfstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fichier terraform.tfstate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaratif-vs-imperatif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Declaratif vs Imperatif
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Declaratif vs Imperatif">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      En général
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terraform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Providers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commandes de base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etapes-de-deploiement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etapes de déploiement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fichier-tf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fichier .tf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definir-la-valeur-dune-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir la valeur d'une variable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Définir la valeur d'une variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-var" class="md-nav__link">
+    <span class="md-ellipsis">
+      -var
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraformtfvars-var-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      terraform.tfvars (-var-file)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export" class="md-nav__link">
+    <span class="md-ellipsis">
+      export
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valeur-par-defaut-dans-variablestf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valeur par défaut dans variables.tf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autotfvars" class="md-nav__link">
+    <span class="md-ellipsis">
+      *.auto.tfvars
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Précédence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#declarerappeler-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Déclarer/Appeler variable
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Déclarer/Appeler variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variablestf" class="md-nav__link">
+    <span class="md-ellipsis">
+      variables.tf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintf" class="md-nav__link">
+    <span class="md-ellipsis">
+      main.tf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resource attributs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implicites" class="md-nav__link">
+    <span class="md-ellipsis">
+      implicites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicites" class="md-nav__link">
+    <span class="md-ellipsis">
+      explicites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terraform graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lifecycle policies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lifecycle policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immutable-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Immutable resource
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lifecycles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for_each" class="md-nav__link">
+    <span class="md-ellipsis">
+      for_each
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentification-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentification AWS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="terraform">Terraform</h1>
+<h2 id="fichier-terraformtfstate">Fichier <code>terraform.tfstate</code></h2>
+<p>Le fichier <code>terraform.tfstate</code> stocke <strong>l'état actuel de l'infrastructure</strong> telle que Terraform la connaît.<br />
+le fichier <strong><code>terraform.tfstate</code></strong> est <strong>mis à jour automatiquement</strong> par Terraform chaque fois que <strong>vous exécutez une commande</strong> qui modifie l'état de l'infrastructure comme <strong>terraform apply</strong>  </p>
+<p><strong><code>terraform plan --refresh=false</code></strong> : Se baser uniquement sur le fichier <code>terraform.tfstate</code> et ne pas fetcher l'état de l'infra depuis le cloud (par ex)  </p>
+<h2 id="declaratif-vs-imperatif">Declaratif vs Imperatif</h2>
+<h3 id="en-general">En général</h3>
+<ul>
+<li><strong>Déclaratif</strong> : Vous décrivez l'état final souhaité de l'infrastructure, et Terraform détermine les actions nécessaires pour y parvenir.  </li>
+<li><strong>Inverse</strong> : La méthode <strong>impérative</strong>, où vous spécifiez étape par étape les actions à exécuter. </li>
+</ul>
+<h3 id="terraform_1">Terraform</h3>
+<p><strong>Terraform</strong> fonctionne en mode <strong>Déclaratif</strong>  </p>
+<h2 id="providers">Providers</h2>
+<p><strong>Définition</strong><br />
+Les providers offrent des ressources que l'on peut utiliser pour déployer.   </p>
+<p>Le <strong>provider</strong> <code>AWS</code>, par exemple, propose la <strong>ressource</strong> <code>aws_ec2_instance_state</code>, qui permet de modifier l'état d'une instance EC2  </p>
+<p><strong>Repository</strong><br />
+<a href="https://registry.terraform.io/browse/providers">Browse Providers | Terraform Registry</a>  </p>
+<p><strong>Répertoire de téléchargement</strong>
+<code>monDossier/.terraform/providers/</code>  </p>
+<p><strong>Utiliser une version spécifique d'un provider</strong> <br />
+1. Aller sur le Registre Terraform<br />
+2. Choisir la version du provider<br />
+3. Cliquer sur "Use Provider"<br />
+4. Copier la configuration dans <code>main.tf</code> ou <code>providers.tf</code><br />
+5. Initialiser votre projet avec <code>terraform init</code>  </p>
+<h2 id="commandes-de-base">Commandes de base</h2>
+<ul>
+<li><strong><code>terraform init</code></strong> : Initialise le répertoire de travail avec les plugins nécessaires pour utiliser Terraform.  </li>
+<li><strong><code>terraform validate</code></strong> : Valide le fichier de configuration Terraform.  </li>
+<li><strong><code>terraform fmt</code></strong> : Formate le fichier de configuration selon les standards.  </li>
+<li><strong><code>terraform plan</code></strong> : Affiche un plan des modifications qui seront apportées à l'infrastructure.  </li>
+<li><strong><code>terraform plan --refresh=false</code></strong> : Se baser uniquement sur le fichier .tfstate et ne pas fetch l'état de l'infra depuis le cloud (par ex)  </li>
+<li><strong><code>terraform apply</code></strong> : Applique les changements planifiés pour créer ou modifier l'infrastructure.  </li>
+<li><strong><code>terraform apply -refresh-only</code></strong> : Met à jour le state sans modifier l'infrastructure  </li>
+<li><strong><code>terraform show</code></strong> : Affiche les détails de l’état ou du plan.  </li>
+<li><strong><code>terraform state show provider_resourcename</code></strong> :  affiche les détails d'une ressource spécifique telle qu'elle est enregistrée dans l'état Terraform  </li>
+<li><strong><code>terraform output</code></strong> : Montre les valeurs des sorties définies dans le fichier Terraform.  </li>
+<li><strong><code>terraform output</code></strong> : Affiche les valeurs des outputs définis dans le fichier de configuration après l'exécution de <code>terraform apply</code>  </li>
+<li><strong><code>terraform providers</code></strong> : Liste les providers utilisés dans la configuration.  </li>
+<li><strong><code>terraform providers mirror</code></strong> : Télécharge les providers dans un répertoire local.  </li>
+<li><strong><code>terraform graph</code></strong> : Génère un graphe des ressources Terraform en format DOT.  </li>
+<li><strong><code>terraform destroy</code></strong> : Supprime l'infrastructure gérée par Terraform.  </li>
+</ul>
+<h2 id="etapes-de-deploiement">Etapes de déploiement</h2>
+<ol>
+<li><strong><code>terraform init</code></strong> :  <ul>
+<li>Télécharge les plugins nécessaires et prépare l’environnement de travail.  </li>
+</ul>
+</li>
+<li><strong><code>terraform plan</code></strong> :   <ul>
+<li>Vérifie la configuration et affiche les changements qui seront réalisés sans les appliquer.  </li>
+</ul>
+</li>
+<li><strong><code>terraform apply</code></strong> :  <ul>
+<li>Exécute les modifications prévues dans l’étape précédente pour déployer l’infrastructure.  </li>
+</ul>
+</li>
+</ol>
+<h2 id="fichier-tf">Fichier <code>.tf</code></h2>
+<p><strong>Exemple</strong> :  </p>
+<pre><code>provider &quot;aws&quot; {  
+  region = &quot;us-west-2&quot;  
+}  
+
+resource &quot;aws_instance&quot; &quot;example&quot; {  
+  ami           = &quot;ami-12345678&quot;  
+  instance_type = &quot;t2.micro&quot;  
+
+  tags = {  
+    Name = &quot;ExampleInstance&quot;  
+  }  
+}  
+</code></pre>
+<p><strong>Explications</strong> :</p>
+<ul>
+<li><strong><code>provider</code></strong> : Définit le fournisseur cloud (ici AWS) et la région.</li>
+<li><strong><code>resource</code></strong> : Crée une instance EC2 avec l’AMI spécifiée et le type d’instance choisi.</li>
+<li><strong><code>tags</code></strong> : Ajoute un tag "Name" pour identifier la ressource.  </li>
+</ul>
+<h2 id="variables">Variables</h2>
+<h3 id="definir-la-valeur-dune-variable">Définir la valeur d'une variable</h3>
+<h4 id="-var">-var</h4>
+<p><code>terraform apply -var="instance_type=t2.micro"</code>  </p>
+<h4 id="terraformtfvars-var-file">terraform.tfvars  (-var-file)</h4>
+<pre><code># terraform.tfvars  
+instance_type = &quot;t2.micro&quot;  
+region         = &quot;us-west-2&quot;  
+</code></pre>
+<p><code>terraform apply -var-file="custom.tfvars"</code>  </p>
+<h4 id="export">export</h4>
+<p><code>export TF_VAR_instance_type="t2.micro"</code><br />
+<code>terraform apply</code>  </p>
+<h4 id="valeur-par-defaut-dans-variablestf">Valeur par défaut dans variables.tf</h4>
+<p>voir ci-dessous  </p>
+<h4 id="autotfvars">*.auto.tfvars</h4>
+<pre><code># Something.auto.tfvars
+instance_type = &quot;t2.micro&quot;
+region         = &quot;us-west-2&quot;
+</code></pre>
+<p>Le fichier est reconnu <strong>automatiquement</strong><br />
+<code>terraform apply</code></p>
+<h4 id="precedence">Précédence</h4>
+<ol>
+<li><strong>Variables d'environnement</strong> (par exemple <code>TF_VAR_instance_type</code>).</li>
+<li><strong><code>-var</code> en ligne de commande</strong>.</li>
+<li><strong>Fichiers <code>-var-file</code></strong> (ex : <code>-var-file="custom.tfvars"</code>).</li>
+<li><strong>Fichiers <code>*.auto.tfvars</code></strong> (chargés automatiquement par Terraform).</li>
+<li><strong>Fichier <code>terraform.tfvars</code></strong> (chargé automatiquement par Terraform si présent).</li>
+<li><strong>Valeurs par défaut dans le fichier <code>variables.tf</code></strong>.</li>
+</ol>
+<h3 id="declarerappeler-variable">Déclarer/Appeler variable</h3>
+<h4 id="variablestf">variables.tf</h4>
+<p>Contenues dans le fichier <strong>variables.tf</strong>   </p>
+<details><summary>variables.tf</summary>  
+
+<pre><code># String
+variable &quot;instance_type&quot; {
+  description = &quot;Type of EC2 instance&quot;
+  type        = string
+  default     = &quot;t2.micro&quot;
+}
+
+# Number
+variable &quot;instance_count&quot; {
+  description = &quot;Number of EC2 instances&quot;
+  type        = number
+  default     = 1
+}
+
+# Map
+variable &quot;tags&quot; {
+  description = &quot;Tags for the resources&quot;
+  type        = map(string)
+  default = {
+    Environment = &quot;dev&quot;
+    Project     = &quot;example&quot;
+  }
+}
+
+# List(string)
+variable &quot;allowed_ips&quot; {
+  description = &quot;List of allowed IPs for security groups&quot;
+  type        = list(string)
+  default     = [&quot;192.168.1.1&quot;, &quot;192.168.1.2&quot;]
+}
+
+# Liste(number)
+variable &quot;allowed_numbers&quot; {
+  description = &quot;List of allowed numbers&quot;
+  type        = list(number)
+  default     = [ 1,2,3 ]
+}
+
+# Tuple
+#Chaque élément doit correspondre au type défini + Ordre garanti
+variable &quot;example_tuple&quot; {
+  type = tuple([string, number, bool])
+  default = [&quot;example&quot;, 42, true]
+}
+
+# Object
+variable &quot;example_object&quot; {
+  type = object({
+    name    = string
+    age     = number
+    active  = bool
+  })
+  default = {
+    name   = &quot;Alice&quot;
+    age    = 30
+    active = true
+  }
+}
+
+# Set = une liste avec ordre garanti et chaque élément est unique
+variable &quot;example_set&quot; {
+  type    = set(string)
+  default = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+}
+
+
+</code></pre>
+
+</details>
+<h4 id="maintf">main.tf</h4>
+<p>Les variables sont ensuite appelées dans <strong>main.tf</strong>  </p>
+<details><summary>main.tf</summary>
+
+<pre><code>provider &quot;aws&quot; {
+  region = &quot;us-west-2&quot;
+}
+
+# String
+resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  tags = {
+    Name = var.instance_name # Appel de la variable string
+  }
+}
+
+# Number + count
+resource &quot;aws_instance&quot; &quot;example_multiple&quot; {
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  count         = var.instance_count # Appel de la variable number
+
+  tags = {
+    Name = &quot;Instance-${count.index}&quot; # Exemple d'utilisation de count.index
+  }
+}
+
+# Map
+resource &quot;aws_s3_bucket&quot; &quot;example&quot; {
+  bucket = &quot;${var.tags[&quot;Environment&quot;]}-bucket&quot; # Appel d'une clé spécifique dans le map
+  project = var.tags[&quot;myproject&quot;]
+  acl    = &quot;private&quot;
+
+  tags = var.tags # Appel complet de la map pour les tags
+}
+
+# List
+resource &quot;aws_security_group&quot; &quot;example&quot; {
+  name_prefix = &quot;example-&quot;
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = &quot;tcp&quot;
+    cidr_blocks = var.allowed_ips # Appel de la liste complète
+  }
+
+  # Appel d'un membre spécifique de la liste
+  tags = {
+    FirstAllowedIP = var.allowed_ips[0] # Premier élément de la liste
+  }
+}
+
+# Tuple
+output &quot;first_element&quot; {
+  value = var.example_tuple[0]  # &quot;hello&quot;
+}
+
+output &quot;second_element&quot; {
+  value = var.example_tuple[1]  # 123
+}
+
+# Object
+output &quot;name&quot; {
+  value = var.example_object.name  # &quot;Alice&quot;
+}
+
+output &quot;age&quot; {
+  value = var.example_object.age   # 30
+}
+
+output &quot;active_status&quot; {
+  value = var.example_object.active  # true
+}
+
+# Set
+output &quot;first_item&quot; {
+  value = element(var.example_set, 0)  # &quot;apple&quot;
+}
+
+output &quot;all_items&quot; {
+  value = join(&quot;, &quot;, var.example_set)  # &quot;apple, banana, cherry&quot;
+}
+
+
+</code></pre>
+
+</details>
+<h2 id="resource-attributs">Resource attributs</h2>
+<pre><code># Ressource 1 : EC2 Instance
+resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-12345678&quot;         # Attribut : ID de l'AMI
+  instance_type = &quot;t2.micro&quot;             # Attribut : Type d'instance
+  key_name      = &quot;my-key-pair&quot;          # Attribut : Nom de la clé SSH
+
+  tags = {
+    Name = &quot;ExampleInstance&quot;             # Attribut : Tag personnalisé
+  }
+}
+
+# Ressource 2 : Elastic IP (EIP) qui dépend de l'instance EC2
+resource &quot;aws_eip&quot; &quot;example_ip&quot; {
+  instance = aws_instance.example.id    # Utilisation de l'attribut 'id' de l'instance EC2
+  Name = &quot;EIP for instance ${aws_instance.example.id}&quot; # Ex de ID au milieu d'une chaine de caractères  
+}
+
+</code></pre>
+<h2 id="dependencies">Dependencies</h2>
+<h4 id="implicites">implicites</h4>
+<p>Terraform gère automatiquement les dépendances entre ressources</p>
+<h4 id="explicites">explicites</h4>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+}
+
+resource &quot;aws_security_group&quot; &quot;example&quot; {
+  name        = &quot;example-sg&quot;
+  description = &quot;Example security group&quot;
+
+  # Dépend explicitement de la création de l'instance
+  depends_on = [aws_instance.example]
+}
+</code></pre>
+<h2 id="output">Output</h2>
+<p>dans <strong>fichier.tf</strong>  </p>
+<pre><code>output &quot;example_output&quot; {
+  value = aws_instance.example.id
+}  
+</code></pre>
+<p>La valeur est alors affichée lors du <code>terraform apply</code>
+Il est possible aussi d'afficher les outputs avec <code>terraform output</code>  </p>
+<h2 id="terraform-graph">Terraform graph</h2>
+<p><strong>1/ Installer graphviz</strong><br />
+<code>apt install graphviz -y</code><br />
+<strong>2/ Générer le graphe</strong><br />
+<code>terraform graph | dot -Tsvc &gt; graph.svg</code>  </p>
+<h2 id="lifecycle-policies">Lifecycle policies</h2>
+<h3 id="immutable-resource">Immutable resource</h3>
+<p><strong>Immutable</strong>: Si une modification est nécessaire, la ressource doit être détruite et recréée</p>
+<h3 id="lifecycles">Lifecycles</h3>
+<p><strong>prevent_destroy</strong>: Permet d'empêcher la suppression de la resource lors de <code>terraform apply</code> et <code>terraform destroy</code></p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-123456&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+</code></pre>
+<p><strong>create_before_destroy</strong> force la création d'une nouvelle ressource avant de détruire l'ancienne, minimisant les interruptions.</p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-123456&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  lifecycle {
+    create_before_destroy= true
+  }
+}
+</code></pre>
+<p><strong>ignore_changes</strong> : Ignore certaines modifications sur des attributs spécifiés.</p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+
+  lifecycle {
+    ignore_changes = [
+      tags[&quot;Environment&quot;],  # Ignore les changements sur le tag &quot;Environment&quot;
+      root_block_device     # Ignore les changements sur les paramètres du disque
+      ignore_changes = all # Peut importe l'attribut changé
+    ]
+  }
+}
+</code></pre>
+<h2 id="datasources">Datasources</h2>
+<p>Les <strong>datasources</strong> dans Terraform permettent de lire des données externes ou existantes pour les utiliser dans la configuration sans les gérer directement.  </p>
+<pre><code># Lire une AMI existante
+data &quot;aws_ami&quot; &quot;example&quot; {
+  most_recent = true
+  owners      = [&quot;amazon&quot;]
+
+  filter {
+    name   = &quot;name&quot;
+    values = [&quot;amzn2-ami-hvm-*&quot;]
+  }
+}
+
+# Utiliser la datasource dans une ressource
+resource &quot;aws_instance&quot; &quot;example&quot; {
+  ami           = data.aws_ami.example.id
+  instance_type = &quot;t2.micro&quot;
+}
+</code></pre>
+<h2 id="count">Count</h2>
+<p>La <strong>fonction <code>count</code></strong> dans Terraform permet de créer <strong>plusieurs instances d'une ressource</strong> en fonction d'un nombre donné.  </p>
+<div class="admonition attention">
+<p class="admonition-title">Important</p>
+<p>Si un élément de la liste est supprimé, toutes les ressources seront recréées à cause du changement d'index.</p>
+</div>
+<p><strong>Exemple</strong> <br />
+main.tf  </p>
+<pre><code>variable &quot;instance_names&quot; {
+  type    = list(string)
+  default = [&quot;instance-1&quot;, &quot;instance-2&quot;, &quot;instance-3&quot;]
+}
+
+resource &quot;aws_instance&quot; &quot;example&quot; {
+  count = length(var.instance_names)
+
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  tags = {
+    Name = var.instance_names[count.index]
+  }
+}
+</code></pre>
+<p>variables.tf</p>
+<pre><code>variable &quot;instance_names&quot; {
+  description = &quot;Liste des noms des instances&quot;
+  type        = list(string)
+}
+</code></pre>
+<h2 id="for_each">for_each</h2>
+<p>La fonction <strong><code>for_each</code></strong> permet de créer plusieurs instances d'une ressource en fonction d'un <strong>set</strong> ou d'une <strong>map</strong>. <br />
+Elle génère un <strong>output de type map</strong>  </p>
+<p><strong>Exemple 1 :</strong> Utilisation d'une variable de type <strong>set</strong> dans <code>main.tf</code> <br />
+<code>variables.tf</code>   </p>
+<pre><code>variable &quot;instance_names&quot; {
+  type    = set(string)
+  default = [&quot;instance-1&quot;, &quot;instance-2&quot;, &quot;instance-3&quot;]
+}
+</code></pre>
+<p><code>main.tf</code>   </p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  for_each = var.instance_names
+
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  tags = {
+    Name = each.value
+  }
+}
+
+output &quot;instance_ids&quot; {
+  value = aws_instance.example
+}
+</code></pre>
+<p><strong>Exemple 2 :</strong> Utilisation de <code>toset</code> pour convertir une liste en <strong>set</strong> dans <code>main.tf</code><br />
+<code>main.tf</code>  </p>
+<pre><code>resource &quot;aws_instance&quot; &quot;example&quot; {
+  for_each = toset([&quot;instance-1&quot;, &quot;instance-2&quot;, &quot;instance-3&quot;])
+
+  ami           = &quot;ami-12345678&quot;
+  instance_type = &quot;t2.micro&quot;
+  tags = {
+    Name = each.value
+  }
+}
+
+output &quot;instance_ids&quot; {
+  value = aws_instance.example
+}
+</code></pre>
+<h2 id="authentification-aws">Authentification AWS</h2>
+<p><strong>Méthode 1</strong><br />
+1/ Installer <strong>aws-cli</strong><br />
+2/ Créer un <strong>utilisateur IAM</strong> + <strong>Access key</strong><br />
+3/ Lancer <code>aws configure</code><br />
+4/ Configurer <strong>terraform</strong>  </p>
+<pre><code>terraform {
+  required_providers {
+    aws = {
+      source = &quot;hashicorp/aws&quot;
+      version = &quot;5.82.2&quot;
+    }
+  }
+}
+provider &quot;aws&quot; {
+  region = &quot;eu-south-2&quot;
+  profile = &quot;your-profile&quot;
+}
+</code></pre>
+<p><strong>Méthode 2</strong><br />
+Créer le fichier <strong>credentials</strong>  </p>
+<pre><code>[default]
+aws_access_key_id = YOUR_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+aws_session_token = YOUR_SESSION_TOKEN  # Optionnel, pour des sessions temporaires
+
+[profile-name]
+aws_access_key_id = YOUR_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
+aws_session_token = YOUR_SESSION_TOKEN  # Optionnel
+
+</code></pre>
+<p>Faire appel au fichier credentials dans <strong>provider.tf</strong>  </p>
+<pre><code>provider &quot;aws&quot; {
+  region                   = &quot;eu-west-1&quot;
+  shared_credentials_files = [&quot;/chemin/credentials&quot;]
+}
+</code></pre>
+<h2 id="modules">Modules</h2>
+<p><strong>1/ Créer une structure de dossier</strong> :   </p>
+<pre><code>my-module/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+</code></pre>
+<p><strong>2/ Utilisation du Module</strong>  </p>
+<pre><code>module &quot;ec2_instance&quot; {
+  source        = &quot;./my-module&quot;
+  region        = &quot;us-west-2&quot;
+  ami_id        = &quot;ami-12345678&quot;
+  instance_type = &quot;t3.micro&quot;
+  instance_name = &quot;MyInstance&quot;
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
